@@ -1,3 +1,4 @@
 <?php
-$conn = mysqli_connect('localhost','root'.''.'scanning');
+$conn = mysqli_connect('localhost', 'root', '', 'scanning', 3306);
+
 ?>
