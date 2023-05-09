@@ -20,12 +20,12 @@ if(isset($_POST['submit'])){
 
         if($row['user_type'] == 'admin'){
             
-            $_SESSION['admin_nmae'] = $row['name'];
+            $_SESSION['admin_name'] = $row['name'];
             header('location:/scanningcenter/adminend/admin_page.php');
 
         }elseif($row['user_type'] == 'user'){
             
-                $_SESSION['user_nmae'] = $row['name'];
+                $_SESSION['user_name'] = $row['name'];
                 header('location: /scanningcenter/stafflandingpage/staffpage.php');
           }
         }else{
@@ -57,7 +57,7 @@ if(isset($_POST['submit'])){
             <input type="email" name="email" required placeholder="Enter your email" >
             <input type="password" name="password" required placeholder="Enter your password">
         <input type="submit" name="submit" value="Login now" class="form-btn">
-        <p>don't have an account ? <a href="register.php">login now</a></p>
+        <p>don't have an account ? <a href="register.php">Register now</a></p>
         </form>
     </div>
 </body>
