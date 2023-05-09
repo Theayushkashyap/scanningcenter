@@ -19,7 +19,7 @@ if(!isset( $_SESSION['admin_name'])){
 <body>
   <div class="form-container">
     <form action="" method="post">
-      <h3>Register Now</h3><span><?php if(isset($_SESSION['admin_name'])) echo $_SESSION['admin_name'] ?></span>
+      <h3>Register Now</h3><span><?php  echo $_SESSION['admin_name'] ?></span>
       
     </form>
   </div>

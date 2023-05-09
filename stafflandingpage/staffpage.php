@@ -24,7 +24,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
   </head>
   <body>
     <div class="container">
-    <nav class="nav">
+    <nav class="nav"><span><?php echo $_SESSION['user_name'] ?></span>
       <i class="uil uil-bars navOpenBtn"></i>
       <a href="#" class="logo">Profile</a>
       <ul class="nav-links">
@@ -33,7 +33,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
         <li><a href="#">Patient Record</a></li>
         <li><a href="#">Patient Bill</a></li>
         <li><a href="#">Total Bill</a></li>
-        <a href="/scanningcenter/main/login_form.php">Logout</a><span><span><?php echo $_SESSION['user_name'] ?></span>
+        <a href="/scanningcenter/main/login_form.php">Logout</a>
       </ul>
       <i class="uil uil-search search-icon" id="searchIcon"></i>
       <div class="search-box">
