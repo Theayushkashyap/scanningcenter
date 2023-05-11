@@ -8,10 +8,11 @@ header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 
 ?>
-
 <!DOCTYPE html>
 <!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
+<head>
+ 
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -22,9 +23,9 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
    <script src="staffpage.js" defer></script>
   </head>
-  <body>
-    <div class="container">
-    <nav class="nav"><span><?php echo $_SESSION['user_name'] ?></span>
+  
+
+    <nav class="nav">
       <i class="uil uil-bars navOpenBtn"></i>
       <a href="#" class="logo">Profile</a>
       <ul class="nav-links">
@@ -33,14 +34,42 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
         <li><a href="#">Patient Record</a></li>
         <li><a href="#">Patient Bill</a></li>
         <li><a href="#">Total Bill</a></li>
-        <a href="/scanningcenter/main/login_form.php">Logout</a>
       </ul>
       <i class="uil uil-search search-icon" id="searchIcon"></i>
       <div class="search-box">
         <i class="uil uil-search search-icon"></i>
         <input type="text" placeholder="Search here..." />
       </div>
-      </div>
     </nav>
+   
+  
+
+
   </body>
+  <body>
+    <table>
+      <tr>
+        <td>
+<!-- html form for CRUD Operations -->
+
+        <td>
+          <!-- table to list all records -->
+          <table class="list" id="employeeList">
+            <thread>
+              <tr>
+                <th>S.No</th>
+                <th>Patient Name</th>
+                <th>Test Description</th>
+                <th>Consulting DR</th>
+                <th></th>
+              </tr>
+            </thread>
+            <thread>
+
+            </thread>
+          
+          </table>
+        </td>
+      </tr>
+    </table>
 </html>
