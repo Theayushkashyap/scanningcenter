@@ -155,14 +155,15 @@ body > table{
 }
 table{
   border-collapse: collapse;
+  border-radius: 10%;
 }
 table.list{
   width: 100%;
 }
 td, th{
-  border: 1px solid #dddddd;
+  border: 5px solid #dddddd;
   text-align: left;
-  padding: 8px;
+  padding: 15px;
 
 }
 tr:nth-child(even),table.list thread>tr{
@@ -175,5 +176,18 @@ input[type-text], input[type-number] {
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
-  
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type-submit] {
+width: 30%;
+background-color: #ddd;
+color: #000;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+
 }
