@@ -155,18 +155,26 @@ body > table{
   margin: 0;
   width: 100%;
   align-items: center;
+  position: absolute;
+  
 }
 table{
   border-collapse: collapse;
-  border-radius: 10%;
+  border-radius: 30%;
+  position: absolute;
+  top: 30%;
+  right: 0;
 }
 table.list{
   width: 100%;
 }
 td, th{
-  border: 5px solid #dddddd;
-  text-align: left;
-  padding: 15px;
+  border: 1px solid #af3535;
+  text-align: center;
+  padding: 0px;
+  position: center;
+  top: 30%;
+  right: 0;
 
 }
 
