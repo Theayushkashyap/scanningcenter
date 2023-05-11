@@ -23,10 +23,61 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
    <script src="staffpage.js" defer></script>
   </head>
   <body>
+  
+
     <div class="container">
     <nav class="nav"><span><?php echo $_SESSION['user_name'] ?></span>
+
       <i class="uil uil-bars navOpenBtn"></i>
       <a href="#" class="logo">Profile</a>
+      <table>
+        <tr>
+          <td>
+  <!-- html form for CRUD Operations -->
+  <form>
+  <div>
+  <label>S.No</label>
+  <input type="text" name="s.no">
+  </div>
+  <div>
+  <label>Patient Name</label>
+  <input type="text" name="patientName" id="patientName">
+  </div>
+  <div>
+  <label>Test Description</label>
+  <input type="text" name="testDiscription" id="testDiscription">
+  </div>
+  <div>
+  <label>Consulting DR</label>
+  <input type="text" name="consultingdr" id="consultingdr">
+  </div>
+  <div class="form-action-buttons">
+    <input type="submit" value="Submit">
+  </div>
+  </form>
+          </td>
+          <td>
+            <!-- table to list all records -->
+            <table class="list" id="employeeList">
+              <thread>
+                <tr>
+                  <th>S.No</th>
+                  <th>Patient Name</th>
+                  <th>Test Description</th>
+                  <th>Consulting DR</th>
+                  <th></th>
+                </tr>
+              </thread>
+              <thread>
+
+              </thread>
+            
+            </table>
+          </td>
+        </tr>
+      </table>
+      <script src="staffpage.js"></script>
+      
       <ul class="nav-links">
         <i class="uil uil-times navCloseBtn"></i>
         <li><a href="#">New Patient</a></li>
@@ -39,7 +90,8 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
       <div class="search-box">
         <i class="uil uil-search search-icon"></i>
         <input type="text" placeholder="Search here..." />
-      </div>
+       
+       
       </div>
     </nav>
   </body>
