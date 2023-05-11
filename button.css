@@ -6,10 +6,18 @@
     color: white; /* change this value to adjust the color of the button text */
     cursor: pointer;
     border-radius: 50px;
+    margin: 0;
+    align-items: center;
   }
   
   /* hover effect */
   .plus-button:hover {
     background-color: #3e8e41; /* change this value to adjust the background color when the button is hovered over */
   }
-  
+  .plus-button {
+    /* ... existing button styles ... */
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-50%, 50%);
+  }
