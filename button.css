@@ -1,0 +1,15 @@
+.plus-button {
+    font-size: 24px; /* change this value to adjust the size of the button */
+    padding: 8px 12px; /* change this value to adjust the padding of the button */
+    background-color: #4CAF50; /* change this value to adjust the background color of the button */
+    border: none; /* remove the border to make the button look like a simple symbol */
+    color: white; /* change this value to adjust the color of the button text */
+    cursor: pointer;
+    border-radius: 50px;
+  }
+  
+  /* hover effect */
+  .plus-button:hover {
+    background-color: #3e8e41; /* change this value to adjust the background color when the button is hovered over */
+  }
+  
