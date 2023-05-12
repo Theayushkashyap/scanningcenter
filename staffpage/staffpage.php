@@ -20,6 +20,11 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 </head>
 
 <body>
+
+<a href="./patient-data.html" >                    
+<button class="plus-button">+</button>
+</a>
+
     <div class="hero">
         <nav>
             <img src="../images/logo.png" class="logo">
@@ -31,7 +36,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                 <li><a href="#">c</a></li>
                 <li><a href="#">d</a></li>
             </ul>
-            <img src="../images/user.png" class="user pic" onclick="toggleMenu()">
+            <img src="../images/user.png" class="user-pic" onclick="toggleMenu()">
 
             <div class="sub-menu-wrap" id="subMenu">
                 <div class="sub-menu">

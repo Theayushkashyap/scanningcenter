@@ -1,5 +1,5 @@
 .plus-button {
-    font-size: 24px; /* change this value to adjust the size of the button */
+    font-size: 50px; /* change this value to adjust the size of the button */
     padding: 8px 12px; /* change this value to adjust the padding of the button */
     background-color: #4CAF50; /* change this value to adjust the background color of the button */
     border: none; /* remove the border to make the button look like a simple symbol */
@@ -8,16 +8,16 @@
     border-radius: 50px;
     margin: 0;
     align-items: center;
+    border-radius: 50%; /* makes the button round */
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  transform: translate(-50%, 50%);
   }
   
   /* hover effect */
   .plus-button:hover {
     background-color: #3e8e41; /* change this value to adjust the background color when the button is hovered over */
   }
-  .plus-button {
-    /* ... existing button styles ... */
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-50%, 50%);
-  }
+ 
+  
