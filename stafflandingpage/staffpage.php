@@ -26,9 +26,13 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
     <div class="container">
     <nav class="nav"><span><?php echo $_SESSION['user_name'] ?></span>
       <i class="uil uil-bars navOpenBtn"></i>
-      <a href="#" class="logo">Profile</a>
+      <button class="logo">
+      <p>Profile</p>
+      </button>
+     
       <ul class="nav-links">
         <i class="uil uil-times navCloseBtn"></i>
+        <button id="profile-button"><p>View profile</p></button>
         <li><a href="#">New Patient</a></li>
         <li><a href="#">Patient Record</a></li>
         <li><a href="#">Patient Bill</a></li>

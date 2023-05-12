@@ -29,10 +29,14 @@ a {
   color: #fff;
   text-decoration: none;
 }
-.nav .logo {
-  font-size: 22px;
-  font-weight: 500;
-}
+.logo {
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 50%;
+    background-color: white;
+    border-color: #11101d;
+  }
+  
 .nav .nav-links {
   column-gap: 20px;
   list-style: none;
@@ -149,3 +153,16 @@ a {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
 }
+.profile-button {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 80%;
+  cursor: pointer;
+  width: 50px !important; /* set the width and height to be equal */
+  height: 50px !important;
+}
+
+

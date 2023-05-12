@@ -43,11 +43,17 @@ if(isset($_POST['submit'])){
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register Form</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    
+  </style>
 </head>
 <body>
+
   <div class="form-container">
     <form action="" method="post">
       <h3>Register Now</h3>
+      
+      
       <?php 
       if(isset($error)){
         foreach($error as $error){
