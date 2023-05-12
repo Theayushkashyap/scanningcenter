@@ -164,5 +164,10 @@ a {
   width: 50px !important; /* set the width and height to be equal */
   height: 50px !important;
 }
-
-
+.container name{
+  color: aliceblue;
+  font-size: medium;
+  position:absolute;
+  top: 0;
+  right: 0;
+}

@@ -23,6 +23,12 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
    <script src="staffpage.js" defer></script>
   </head>
   <body>
+    <div class="hero">
+      <nav>
+        <img src=".../stafflandingpage/5087607.png" class="logo">
+      </nav>
+
+    </div>
     <div class="container">
     <nav class="nav"><span><?php echo $_SESSION['user_name'] ?></span>
       <i class="uil uil-bars navOpenBtn"></i>
