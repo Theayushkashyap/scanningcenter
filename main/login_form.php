@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
         if($row['user_type'] == 'admin'){
             
             $_SESSION['admin_name'] = $row['name'];
-            header('location:/scanningcenter/adminend/admin_page.php');
+            header('location:http://localhost:3000/adminend/admin_page.php ');
 
         }elseif($row['user_type'] == 'user'){
             
