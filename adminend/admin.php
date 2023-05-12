@@ -1,7 +1,7 @@
 <?php
 @include 'config.php';
 session_start();
-if(!isset( $_SESSION['user_name'])){
+if(!isset( $_SESSION['admin_name'])){
     header('location:http://localhost/scanningcenter/main/login_form.php');
 }
 header("Cache-Control: no-cache, must-revalidate");
@@ -16,13 +16,12 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="sstaffpage.css">
+    <link rel="stylesheet" href="admin.css">
 </head>
 
 <body>
 
 <a href="./patient-data.php" >                    
-<button class="plus-button">+</button>
 </a>
 
     <div class="hero">
