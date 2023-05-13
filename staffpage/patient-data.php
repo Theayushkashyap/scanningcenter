@@ -2,8 +2,64 @@
 <html>
 <head>
   <title>Register Form</title>
+  <link rel="stylesheet" href="patient-data.css">
 </head>
 <body>
+<div class="hero">
+        <nav>
+            <img src="../images/logo.png" class="logo">
+
+            <ul>
+                <li><a href="http://localhost:3000/staffpage/staffpage.php">Home</a></li>
+                <li><a href="#">Archive</a></li>
+                <li><a href="#">Daily Report</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#">d</a></li>
+            </ul>
+            <img src="../images/user.png" class="user-pic" onclick="toggleMenu()">
+
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="../images/user.png" >
+
+                    </div>
+                    <hr>
+                    <a href="#" class="sub-menu-link">
+                        <img src="../images/profile.png" >
+                        <p>Edit Profile</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="../images/setting.png" >
+                        <p>Settings & Privacy </p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="../images/help.png" >
+                        <p>Help & Support</p>
+                        <span>></span>
+                    </a>
+                    <a href="../index.html" class="sub-menu-link">
+                        <img src="../images/logout.png" >
+                        <p>Logout</p>
+                        <span>></span>
+                    </a>
+                    
+                </div>
+            </div>
+        
+        </nav>
+
+
+    </div>
+<script>
+    let subMenu = document.getElementById("subMenu");
+
+    function toggleMenu(){
+        subMenu.classList.toggle("open-menu");
+    }
+</script>
 <center>
     <table border="4">
         <thread>
