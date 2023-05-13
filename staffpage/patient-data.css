@@ -22,7 +22,9 @@
     position: relative;
   }
   .logo{
-    width:120px
+    width:200px;
+    position: absolute;
+    top: -120%;
   }
   .user-pic{
     width: 50px;

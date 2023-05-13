@@ -21,9 +21,12 @@ nav{
   justify-content: space-between;
   position: relative;
 }
-.logo{
-  width:120px
-}
+  .logo{
+    width:200px;
+    position: absolute;
+    top: -120%;
+  }
+
 .user-pic{
   width: 50px;
   border-radius: 50%;

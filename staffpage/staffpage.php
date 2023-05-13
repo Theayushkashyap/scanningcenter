@@ -27,14 +27,13 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 
     <div class="hero">
         <nav>
-            <img src="../images/logo.png" class="logo">
+            <img src="../images/Untitled-1.png" class="logo">
 
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Archive</a></li>
                 <li><a href="#">Daily Report</a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#">d</a></li>
+                <li><a href="#">Payment Details</Details></a></li>
             </ul>
             <img src="../images/user.png" class="user-pic" onclick="toggleMenu()">
 
