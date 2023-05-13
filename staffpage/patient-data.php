@@ -1,68 +1,92 @@
-<?php
-
-$conn = mysqli_connect('localhost', 'root', '', 'scanning', 3306);
-
-$name = mysqli_real_escape_string($conn, $_POST['name']);
-  $email = mysqli_real_escape_string($conn, $_POST['email']);
-  $password = $_POST['password'];
-  $cpassword = $_POST['cpassword'];
-  $user_type = $_POST['user_type'];
-
-
-// prepare and bind the data
-$insert = "INSERT INTO user_form (name, email, password, user_type) VALUES ('$name', '$email', '$hash', '$user_type')";
-mysqli_query($conn, $insert);
-
-
-// set parameters and execute
-$name = $_POST['name'];
-$age = $_POST['age'];
-$gender = $_POST['gender'];
-$contact_info = $_POST['contact'];
-$referral_doctor = $_POST['referral'];
-$dropdown_menu = $_POST['dropdown'];
-$stmt->execute();
-
-// close the statement and connection
-$stmt->close();
-$conn->close();
-?>
-
-?>
-
 <!DOCTYPE HTML>
 <html>
 <head>
   <title>Register Form</title>
 </head>
 <body>
- <form>
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name"><br>
+<center>
+    <table border="4">
+        <thread>
+            <tr>
+                <th>Hospital</th>
+                <td><input type="text" name="hospital" id="hospital"></td>
+                </tr>
+                </thread>
+                <tbody>
+                    <tr>
+                        <tr>
+                            <th>first Name</th>
+                            <td><input type="text" name="fname" id="fname"></td>
+                            </tr>
+                            <tr>
+                                <th>last Name</th>
+                                <td><input type="text" name="lname" id="lname"></td>
+                                </tr>
+                                <tr>
+                                    <th>Emailid</th>
+                                    <td><input type="text" name="email" id="email"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Age</th>
+                                        <td><input type="text" name="age" id="age"></td>
+                                        </tr>
+                                        <tr id="btna">
+                                            <td><input type="button" name="button" name="button" id="btn" value="Add" onclick="AddRow()"></td>
+                                            </tr>
+                        
+                        </tr>
+                        </tbody>
+                        </table>
+                        <table border="4" id="show">
+                            <thead>
+                                <tr>
+                                    <th>Hospital</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Age</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        </center>
+<script>
+    var list1 = [];
+    var list2 = [];
+    var list3 = [];
+    var list4 = [];
+    var list5 = [];
 
-  <label for="age">Age:</label>
-  <input type="number" id="age" name="age"><br>
+    var n = 1;
+    var x = 0;
 
-  <label for="gender">Gender:</label>
-  <input type="radio" id="male" name="gender" value="male">
-  <label for="male">Male</label>
-  <input type="radio" id="female" name="gender" value="female">
-  <label for="female">Female</label><br>
+    function AddRow(){
 
-  <label for="contact">Contact Info:</label>
-  <textarea id="contact" name="contact"></textarea><br>
+        var AddRown = document.getElementById('show');
+        var NewRow = AddRown.insertRow(n);
 
-  <label for="referral">Referral Doctor:</label>
-  <input type="text" id="referral" name="referral"><br>
+        list1[x] = document.getElementById("hospital").value;
+        list2[x] = document.getElementById("fname").value;
+        list3[x] = document.getElementById("lname").value;
+        list4[x] = document.getElementById("email").value;
+        list5[x] = document.getElementById("age").value;
 
-  <label for="dropdown">Dropdown Menu:</label>
-  <select id="dropdown" name="dropdown">
-    <option value="option1">Option 1</option>
-    <option value="option2">Option 2</option>
-    <option value="option3">Option 3</option>
-  </select><br>
+        var cel1 = NewRow.insertCell(0);
+        var cel2 = NewRow.insertCell(1);
+        var cel3 = NewRow.insertCell(2);
+        var cel4 = NewRow.insertCell(3);
+        var cel5 = NewRow.insertCell(4);
 
-  <input type="submit" value="Submit">
-</form>
+        cel1.innerHTML = list1[x];
+        cel2.innerHTML = list2[x];
+        cel3.innerHTML = list3[x];
+        cel4.innerHTML = list4[x];
+        cel5.innerHTML = list5[x];
+
+        n++;
+        x++;
+        
+        
+    }
+</script>
 </body>
 </html>
