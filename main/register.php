@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
       mysqli_query($conn, $insert);
 
       // Redirect to the login page
-      header('location:login_form.php');
+      header('location:http://localhost/scanningcenter/main/login_form.php');
     }
   }
 };

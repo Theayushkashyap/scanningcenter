@@ -16,15 +16,21 @@ function updateTime() {
     clock.setAttribute('data-time', timeString);
   }
   
-  function updateDate() {
-    const now = new Date();
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const dateString = now.toLocaleDateString('en-US', options);
-    const dayOfWeek = now.toLocaleDateString('en-US', {weekday: 'long'});
-    const dateStringFormatted = dayOfWeek + ', ' + dateString;
-    const date = document.querySelector('.date');
-    date.textContent = dateStringFormatted;
-  }
+function updateDate() {
+  const now = new Date();
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const dateString = now.toLocaleDateString('en-US', options);
+  const dayOfWeek = now.toLocaleDateString('en-US', { weekday: 'long' });
+  const dateStringFormatted = dayOfWeek + ', ' + dateString;
+  const date = document.querySelector('.date');
+  date.textContent = dateStringFormatted;
+}
+
+updateTime();
+setInterval(updateTime, 1000);
+updateDate();
+setInterval(updateDate, 1000);
+
   
   updateTime();
   setInterval(updateTime, 1000);
