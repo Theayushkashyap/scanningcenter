@@ -10,7 +10,7 @@
             <img src="../images/Untitled-1.png" class="logo">
 
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="staffpage.php">Home</a></li>
                 <li><a href="#">Archive</a></li>
                 <li><a href="#">Daily Report</a></li>
                 <li><a href="#">Payment Details</Details></a></li>
