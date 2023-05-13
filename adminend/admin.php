@@ -31,7 +31,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Feature</a></li>
-                <li><a href="#">b</a></li>
+                <li><a href="../main/register.php">Add New Staff</a></li>
                 <li><a href="#">c</a></li>
                 <li><a href="#">d</a></li>
             </ul>
@@ -41,7 +41,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                 <div class="sub-menu">
                     <div class="user-info">
                         <img src="../images/user.png" >
-                        <h2><span><?php echo $_SESSION['user_name'] ?></span></h2>
+                        <h2><span><?php echo $_SESSION['admin_name'] ?></span></h2>
                     </div>
                     <hr>
                     <a href="#" class="sub-menu-link">

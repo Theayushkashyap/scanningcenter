@@ -31,9 +31,9 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Feature</a></li>
-                <li><a href="#">b</a></li>
-                <li><a href="#">c</a></li>
+                <li><a href="#">Archive</a></li>
+                <li><a href="#">Daily Report</a></li>
+                <li><a href="#"></a></li>
                 <li><a href="#">d</a></li>
             </ul>
             <img src="../images/user.png" class="user-pic" onclick="toggleMenu()">
@@ -60,7 +60,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                         <p>Help & Support</p>
                         <span>></span>
                     </a>
-                    <a href="../main/login_form.php" class="sub-menu-link">
+                    <a href="../index.html" class="sub-menu-link">
                         <img src="../images/logout.png" >
                         <p>Logout</p>
                         <span>></span>
