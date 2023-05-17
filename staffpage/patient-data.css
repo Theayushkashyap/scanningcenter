@@ -4,13 +4,134 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
   }
+ 
   
   .hero{
-      width: 100%;
-      min-height: 100vh;
-      background: #eceaff;
-      color: #525252;
-    }
+    width: 100%;
+    min-height: 100vh;
+  }
+  body{
+    background-color: #d071f9;
+    padding: 0 10px;
+  }
+  .container
+  {
+    
+    max-width: 500px;
+    width: 100%;
+    background-color: white;
+    margin: 20px auto;
+    padding: 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  .container .title
+  {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #d071f9;
+    text-transform: uppercase;
+    text-align: center;
+
+  }
+  .container .form{
+   width: 100%; 
+  }
+  .container .form .input-field
+  {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  .container .form .input-field label
+  {
+width: 200px;
+margin-right: 10px;
+font-size: 15px;
+  }
+  .container .form .input-field .input,
+  .container .form .input-field .textarea
+  {
+   
+    width: 100%;
+    outline: none;
+    border: 2px solid #d071f9;
+    font-size: 15px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: all 0.5s ease;
+  }
+  .container .form .input-field .textarea{
+    resize: none;
+    height: 70px;
+  }
+  .container .form .input-field .custom_select
+{
+  position: relative;
+  width: 100%;
+  height: 37px;
+}
+  .container .form .input-field .custom_select select{
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 100%;
+    height: 100%;
+    padding: 8px 10px;
+    border: 2px solid  #d071f9;
+    border-radius: 3px;
+    outline: none;
+  }
+  .container .form .input-field .custom_select:before
+{
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  border: 8px solid black;
+  border-color:  #d071f9 transparent transparent transparent;
+pointer-events: none;
+}
+.container .form .input-field .input:focus,
+  .container .form .input-field .textarea:focus,
+  .container .form .input-field select:focus
+{
+  border: 2px solid purple;
+}
+.container .form .input-field .btn
+{
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 20px;
+  border: 0;
+  background: #d071f9;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+}
+.container .form .input-field:last-child
+{
+  margin-bottom: 0;
+}
+.container .form .input-field .btn:hover
+{
+  background: purple;
+}
+
+@media(max-width: 420px)
+{
+  .container .form .input-field
+  {
+    flex-direction: column;
+    align-items: flex-start;
+
+  }
+  .container .form .input-field label
+  {
+    margin-bottom: 5px;
+  } 
+}
   nav{
     background: #1a1a1a;
     width: 100%;
