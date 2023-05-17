@@ -1,105 +1,118 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
- 
-  
-  .hero{
-    width: 100%;
-    min-height: 100vh;
-  }
-  body{
-    background-color: #d071f9;
-    padding: 0 10px;
-  }
-  .container
-  {
-    
-    max-width: 500px;
-    width: 100%;
-    background-color: white;
-    margin: 20px auto;
-    padding: 30px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  }
-  .container .title
-  {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 25px;
-    color: #d071f9;
-    text-transform: uppercase;
-    text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 
-  }
-  .container .form{
-   width: 100%; 
-  }
-  .container .form .input-field
-  {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-  }
-  .container .form .input-field label
-  {
-width: 200px;
-margin-right: 10px;
-font-size: 15px;
-  }
-  .container .form .input-field .input,
-  .container .form .input-field .textarea
-  {
-   
-    width: 100%;
-    outline: none;
-    border: 2px solid #d071f9;
-    font-size: 15px;
-    padding: 8px 10px;
-    border-radius: 3px;
-    transition: all 0.5s ease;
-  }
-  .container .form .input-field .textarea{
-    resize: none;
-    height: 70px;
-  }
-  .container .form .input-field .custom_select
-{
+.hero {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  background-color: lightblue;
+  padding: 0 10px;
+}
+
+.container {
+  align-self: center;
+  max-width: 500px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 30px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent(white);
+  filter: blur(5px);
+  z-index: -1;
+}
+.container .title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #d071f9;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.container .form {
+  width: 100%;
+}
+
+.container .form .input-field {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .form .input-field label {
+  width: 200px;
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.container .form .input-field .input,
+.container .form .input-field .textarea {
+  width: 100%;
+  outline: none;
+  border: 2px solid #d071f9;
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 3px;
+  transition: all 0.5s ease;
+}
+
+.container .form .input-field .textarea {
+  resize: none;
+  height: 70px;
+}
+
+.container .form .input-field .custom_select {
   position: relative;
   width: 100%;
   height: 37px;
 }
-  .container .form .input-field .custom_select select{
-    -webkit-appearance: none;
-    appearance: none;
 
-    width: 100%;
-    height: 100%;
-    padding: 8px 10px;
-    border: 2px solid  #d071f9;
-    border-radius: 3px;
-    outline: none;
-  }
-  .container .form .input-field .custom_select:before
-{
+.container .form .input-field .custom_select select {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  padding: 8px 10px;
+  border: 2px solid #d071f9;
+  border-radius: 3px;
+  outline: none;
+}
+
+.container .form .input-field .custom_select:before {
   content: "";
   position: absolute;
   top: 12px;
   right: 10px;
   border: 8px solid black;
-  border-color:  #d071f9 transparent transparent transparent;
-pointer-events: none;
+  border-color: #d071f9 transparent transparent transparent;
+  pointer-events: none;
 }
+
 .container .form .input-field .input:focus,
-  .container .form .input-field .textarea:focus,
-  .container .form .input-field select:focus
-{
+.container .form .input-field .textarea:focus,
+.container .form .input-field select:focus {
   border: 2px solid purple;
 }
-.container .form .input-field .btn
-{
+
+.container .form .input-field .btn {
   width: 100%;
   padding: 8px 10px;
   font-size: 20px;
@@ -110,168 +123,45 @@ pointer-events: none;
   border-radius: 3px;
   outline: none;
 }
-.container .form .input-field:last-child
-{
+
+.container .form .input-field:last-child {
   margin-bottom: 0;
 }
-.container .form .input-field .btn:hover
-{
+
+.container .form .input-field .btn:hover {
   background: purple;
 }
 
-@media(max-width: 420px)
-{
-  .container .form .input-field
-  {
+@media (max-width: 420px) {
+  .container .form .input-field {
     flex-direction: column;
     align-items: flex-start;
-
   }
-  .container .form .input-field label
-  {
+
+  .container .form .input-field label {
     margin-bottom: 5px;
-  } 
+  }
 }
-  nav{
-    background: #1a1a1a;
-    width: 100%;
-    height: 70px;
-    padding: 10px 10%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-  }
-  .logo{
-    width:200px;
-    position: absolute;
-    top: -120%;
-  }
-  .user-pic{
-    width: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-left: 30px;
-  }
-  nav ul{
-    width: 100%;
-    text-align: right;
-    }
-  nav ul li{
-    display: inline-block;
-    list-style: none;
-    margin: 10px 20px;
-  }
-  nav ul li a{
-    color: #fff;
-    text-decoration: none;
-  }
-  .sub-menu-wrap{
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    width: 320px;
-    max-height: 0px;
-    overflow: hidden;
-    transition: max-height 0.5s;
-    }
-    .sub-menu-wrap.open-menu{
-    
-      max-height: 400px;
-  
-      }
-  
-  .sub-menu{
-    background: #fff;
-    padding: 20px;
-    margin: 10px;
-  }
-  .user-info{
-    display: flex;
-    align-items: center;
-  }
-  .user-info h3{
-    font-weight: 500;
-  }
-  .user-info img{
-    width: 60px;
-    border-radius: 50%;
-    margin-right: 15px;
-  }
-  .sub-menu hr{
-    border: 0;
-    height: 1px;
-    width: 100%;
-    background: #ccc;
-    margin: 15px 0 10px;
-  }
-  .sub-menu-link{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #525252;
-    margin: 12px 0;
-  }
-  .sub-menu-link p{
-    width: 100%;
-  }
-  .sub-menu-link img{
-    width: 40px;
-    background: #e5e5e5;
-    border-radius: 50%;
-    padding: 8px;
-    margin-right: 15px;
-  }
-  .sub-menu-link span{
-    font-size: 18px;
-    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  .sub-menu-link:hover span{
-    transform: translateX(5px);
-  }
-  .sub-menu-link:hover p{
-    font-weight: 600;
-  }
-  .plus-button {
-    font-size: 30px; /* change this value to adjust the size of the button */
-    padding: 8px 12px; /* change this value to adjust the padding of the button */
-    background-color: #4CAF50; /* change this value to adjust the background color of the button */
-    border: none; /* remove the border to make the button look like a simple symbol */
-    color: white; /* change this value to adjust the color of the button text */
-    cursor: pointer;
-    border-radius: 50px;
-    margin: 0;
-    align-items: center;
-    border-radius: 50%; /* makes the button round */
+
+.plus-button {
+  font-size: 30px;
+  padding: 8px 12px;
+  background-color: transparent;
+  border: none;
+  color: black;
+  cursor: pointer;
+  border-radius: 50px;
+  margin: 0;
+  align-items: center;
+  border-radius: 50%;
   position: fixed;
-  bottom: 70px;
+  top: 20px;
   right: 20px;
-  transform: translate(-50%, 50%);
-  }
-  
-  /* hover effect */
-  .plus-button:hover {
-    background-color: #3e8e41; /* change this value to adjust the background color when the button is hovered over */
-  }
-  
-  
- 
- 
- table{
-    margin-top: 50px;
-    text-align: center;
-    background: #333;
-    color: #fff;
-    position: absolute;
-    top: 65%;
-    left: 25%;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-#show th,#show td{
-    padding: 13px;
-    
-}
-
-#btna td input{
-    width: 100%;
+/* hover effect */
+.plus-button:hover {
+  transform: translateY(5px);
+  background-color:; /* change this value to adjust the background color when the button is hovered over */
 }

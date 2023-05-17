@@ -9,55 +9,14 @@
 </head>
 
 <body>
-    <div class="hero">
-        <nav>
-            <img src="../images/Untitled-1.png" class="logo">
-
-            <ul>
-                <li><a href="staffpage.php">Home</a></li>
-                <li><a href="#">Archive</a></li>
-                <li><a href="#">Daily Report</a></li>
-                <li><a href="#">Payment Details</Details></a></li>
-            </ul>
-            <img src="../images/user.png" class="user-pic" onclick="toggleMenu()">
-
-            <div class="sub-menu-wrap" id="subMenu">
-                <div class="sub-menu">
-                    <div class="user-info">
-                        <img src="../images/user.png">
-
-                    </div>
-                    <hr>
-                    <a href="#" class="sub-menu-link">
-                        <img src="../images/profile.png">
-                        <p>Edit Profile</p>
-                        <span>></span>
-                    </a>
-                    <a href="#" class="sub-menu-link">
-                        <img src="../images/setting.png">
-                        <p>Settings & Privacy </p>
-                        <span>></span>
-                    </a>
-                    <a href="#" class="sub-menu-link">
-                        <img src="../images/help.png">
-                        <p>Help & Support</p>
-                        <span>></span>
-                    </a>
-                    <a href="../index.html" class="sub-menu-link">
-                        <img src="../images/logout.png">
-                        <p>Logout</p>
-                        <span>></span>
-                    </a>
-
-                </div>
-            </div>
-
-        </nav>
-      
+ 
     <div class="container">
         <div class="title">
             Registration Form
         </div>
+        <a href="./staffpage.php" >                    
+<button class="plus-button">x</button>
+</a>     
         <div class="form">
             <div class="input-field">
                 <label>First Name</label>
