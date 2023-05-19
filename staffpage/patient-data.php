@@ -1,3 +1,5 @@
+<?php include("connection.php"); ?>
+<?php error_reporting(0); ?>
 <!DOCTYPE HTML>
 <html>
 
@@ -9,59 +11,82 @@
 </head>
 
 <body>
+<a href="staffpage.php">                    
+<button class="plus-button">x</button>
+</a>  
  
     <div class="container">
+        <form action="" method="POST">
         <div class="title">
             Registration Form
         </div>
-        <a href="http://localhost:3000/staffpage/staffpage.php" >                    
-<button class="plus-button">x</button>
-</a>  
+        
         <div class="form">
             <div class="input-field">
-                <label>First Name</label>
-                <input type="text" class="input">
+                <label>Patient ID</label>
+                <input type="text" class="input" name="pid" required>
             </div>
             <div class="input-field">
-                <label>Last Name</label>
-                <input type="text" class="input">
+                <label>Patient Name</label>
+                <input type="text" class="input" name="pname" required>
             </div>
             <div class="input-field">
-                <label>Password</label>
-                <input type="password" class="input">
-            </div>
-            <div class="input-field">
-                <label>Confirm Password</label>
-                <input type="password" class="input">
+                <label>Age</label>
+                <input type="text" class="input" name="age" required>
             </div>
             <div class="input-field">
                 <label>Gender</label>
                 <div class="custom_select">
-                <select>
-                    <option>Select</option>
-                    <option>Male</option>
-                    <option>Female</option>
+                <select name="gender" required>
+                    <option value="">Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
                 </select>
             </div>
             </div>
             <div class="input-field">
-                <label>Email Address</label>
-                <input type="text" class="input">
+                <label>Study Description</label>
+                <textarea class="textarea" name="sdescription" required></textarea>
             </div>
             <div class="input-field">
-                <label>Phone Number</label>
-                <input type="text" class="input">
+                <label>Contact No</label>
+                <input type="text" class="input" name="contactno" required>
             </div>
             <div class="input-field">
-                <label>Address</label>
-                <textarea class="textarea"></textarea>
+                <label>Referral Doctor</label>
+                <input type="text" class="input" name="referraldoctor" required>
             </div>
             <div class="input-field">
-                <input type="submit" value="Register" class="btn">
+                <input type="submit" value="Register" class="btn" name="register">
             </div>
         </div>
     </div>
+</form>
     </div>
 </body>
 
 </html>
+
+<?php
+if($_POST['register'])
+{
+   $pid   = $_POST['pid'];
+   $pname = $_POST['pname'];
+   $age   = $_POST['age'];
+   $gen   = $_POST['gender'];
+   $sdesc = $_POST['sdescription'];
+   $cno   = $_POST['contactno'];
+   $rdoc  = $_POST['referraldoctor'];
+
+   $query = "INSERT INTO form values('$pid','$pname','$age','$gen','$sdesc','$cno','$rdoc')";
+   $data = mysqli_query($conn,$query);
+   if($data)
+   {
+    echo "Data  Inserated into Database";
+   }
+   else
+   {
+    echo "Failed";
+   }
+}
+?> 

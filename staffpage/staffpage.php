@@ -35,6 +35,8 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                 <li><a href="#">Daily Report</a></li>
                 <li><a href="#">Payment Details</Details></a></li>
             </ul>
+            
+
             <img src="../images/user.png" class="user-pic" onclick="toggleMenu()">
 
             <div class="sub-menu-wrap" id="subMenu">
@@ -65,20 +67,50 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                         <span>></span>
                     </a>
                     
+                    
                 </div>
             </div>
         
         </nav>
+    
 
 
     </div>
+    
 <script>
+    
     let subMenu = document.getElementById("subMenu");
 
     function toggleMenu(){
         subMenu.classList.toggle("open-menu");
     }
 </script>
+
 </body>
 
 </html>
+<?php
+                    include("connection.php");
+error_reporting(0);
+$query = "SELECT * FROM FORM";
+$data = mysqli_query($conn, $query);
+
+$total = mysqli_num_rows($data);
+$result = mysqli_fetch_assoc($data);
+
+
+//echo $total;
+
+if($total != 0)
+{
+ 
+   while($a <= 10)
+   {
+    echo $result[patient_id]." ".$result[patient_name]." ".$result[age]." ".$result[gender]." ".$result[study_description]." ".$result[contact_no]." ".$result[referral_doctor];
+   } 
+}
+else
+{
+    echo "No records found";
+}
+?>
