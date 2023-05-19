@@ -153,5 +153,5 @@ body {
 /* hover effect */
 .plus-button:hover {
   transform: translateY(5px);
-  background-color:; /* change this value to adjust the background color when the button is hovered over */
+  background-color: lightblue; /* change this value to adjust the background color when the button is hovered over */
 }

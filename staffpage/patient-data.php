@@ -14,9 +14,9 @@
         <div class="title">
             Registration Form
         </div>
-        <a href="./staffpage.php" >                    
+        <a href="http://localhost:3000/staffpage/staffpage.php" >                    
 <button class="plus-button">x</button>
-</a>     
+</a>  
         <div class="form">
             <div class="input-field">
                 <label>First Name</label>
