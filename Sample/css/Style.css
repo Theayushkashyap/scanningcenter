@@ -45,13 +45,7 @@ a{
 ul{
     list-style-type: none;
 }
-image {
-    width: 200px; /* Adjust the width as desired */
-    height: auto; /* Maintain the aspect ratio */
-    position: absolute;
-    top: 20px; /* Adjust the top position as desired */
-    left: 20px; /* Adjust the left position as desired */
-  }
+
 h1{
     font-family: var(--Lexend);
     font-size: 2.5rem;
@@ -64,11 +58,6 @@ h2{
 h3{
     font-family: var(--Abel);
     font-size: 1.3rem;
-    position: absolute;
-    top: 20%;
-    right: 30%;
-
-    
 }
 
 button.btn{
@@ -102,7 +91,7 @@ p{
 /* --------------- navbar ----------------- */
 
 .nav{
-    background: lightblue;
+    background: white;
     padding: 0 2rem;
     height: 0rem;
     min-height: 10vh;
@@ -185,8 +174,8 @@ p{
 
 /* --------------- Site title ---------------- */
 main .site-title{
-    background:;
-    background-size:;
+    background: url('../assets/washington-hospital-morris-hyman-critical-care-4-1.jpg');
+    background-size: cover;
     height: 110vh;
     display: flex;
     justify-content: center;
@@ -200,6 +189,8 @@ main .site-title .site-background{
 
 main .site-title h1, h3{
     margin: .3rem;
+
+    
 }
 
 main .site-title .btn{

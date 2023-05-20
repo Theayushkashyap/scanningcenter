@@ -92,9 +92,8 @@ nav ul li a {
 /* Content section */
 .content h1 {
   max-width: 500px;
-  padding: 30px;
+  padding: 0;
   position: absolute;
-  background-color: white;
   top: 20%;
   left: 69%;
   transform: translateX(-50%);
