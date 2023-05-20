@@ -1,3 +1,4 @@
+
 <?php
 @include 'config.php';
 session_start();
@@ -16,8 +17,9 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="sstaffpage.css">
-</head>
+         <link rel="stylesheet" href="sstaffpage.css">
+
+         </head>
 
 <body>
 
@@ -72,11 +74,60 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
             </div>
         
         </nav>
-    
+        <?php
+                    include("connection.php");
+error_reporting(0);
+$query = "SELECT * FROM FORM";
+$data = mysqli_query($conn, $query);
 
+$total = mysqli_num_rows($data);
+
+
+
+//echo $total;
+
+if($total != 0)
+{
+    ?>
+<h2 align="center">Displaying All Records</h2>
+<center><table border="3" cellspacing="8" width="75%">
+    <tr>
+    <th width="10%">Patient ID</th>
+    <th width="10%">Patient Name</th>
+    <th width="5%">Age</th>
+    <th width="5%">Gender</th>
+    <th width="25%">Study Description</th>
+    <th width="10%">Contact No</th>
+    <th width="10%">Referral Doctor</th>
+    </tr>
+
+
+
+<?php
+ 
+   while($result = mysqli_fetch_assoc($data))
+   {
+    echo "<tr>
+    <td>".$result['patient_id']."</td>
+    <td>".$result['patient_name']."</td>
+    <td>".$result['age']."</td>
+    <td>".$result['gender']."</td>
+    <td>".$result['study_description']."</td>
+    <td>".$result['contact_no']."</td>
+    <td>".$result['referral_doctor']."</td>
+    </tr>
+     
+    ";
+   } 
+}
+else
+{
+    echo "No records found";
+}
+
+?>
 
     </div>
-    
 <script>
     
     let subMenu = document.getElementById("subMenu");
@@ -88,29 +139,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 
 </body>
 
+</table>
+</center>
 </html>
-<?php
-                    include("connection.php");
-error_reporting(0);
-$query = "SELECT * FROM FORM";
-$data = mysqli_query($conn, $query);
 
-$total = mysqli_num_rows($data);
-$result = mysqli_fetch_assoc($data);
-
-
-//echo $total;
-
-if($total != 0)
-{
- 
-   while($a <= 10)
-   {
-    echo $result[patient_id]." ".$result[patient_name]." ".$result[age]." ".$result[gender]." ".$result[study_description]." ".$result[contact_no]." ".$result[referral_doctor];
-   } 
-}
-else
-{
-    echo "No records found";
-}
-?>

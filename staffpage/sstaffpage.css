@@ -5,11 +5,12 @@
   font-family: "Poppins", sans-serif;
 }
 
+
 .hero{
     width: 100%;
     min-height: 100vh;
-    background: #eceaff;
-    color: #525252;
+    background: lightblue;
+    color: black;
   }
 nav{
   background: #1a1a1a;
@@ -20,6 +21,12 @@ nav{
   align-items: center;
   justify-content: space-between;
   position: relative;
+}
+table
+{
+  background-color: white;
+  border-color:purple;
+  text-decoration: solid red;
 }
 .logo{
   width:200px;
