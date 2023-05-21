@@ -63,7 +63,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                         <p>Help & Support</p>
                         <span>></span>
                     </a>
-                    <a href="../index.html" class="sub-menu-link">
+                    <a href="/Sample/Index.html" class="sub-menu-link">
                         <img src="../images/logout.png" >
                         <p>Logout</p>
                         <span>></span>
