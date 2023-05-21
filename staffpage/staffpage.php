@@ -90,15 +90,16 @@ if($total != 0)
 {
     ?>
 <h2 align="center">Displaying All Records</h2>
-<center><table border="3" cellspacing="8" width="75%">
+<center><table border="3" cellspacing="8" width="80%">
     <tr>
     <th width="10%">Patient ID</th>
     <th width="10%">Patient Name</th>
     <th width="5%">Age</th>
     <th width="5%">Gender</th>
-    <th width="25%">Study Description</th>
+    <th width="15%">Study Description</th>
     <th width="10%">Contact No</th>
     <th width="10%">Referral Doctor</th>
+    <th width="15%">Operations</th>
     </tr>
 
 
@@ -115,6 +116,9 @@ if($total != 0)
     <td>".$result['study_description']."</td>
     <td>".$result['contact_no']."</td>
     <td>".$result['referral_doctor']."</td>
+
+    <td><a href='update_staffpage.php?id=$result[patient_id]'><input type='submit' value='Update' class='update'></a>
+    <a href='delete.php?id=$result[patient_id]'><input type='submit' value='Delete' class='delete' onclick = 'return checkdelete()'></a></td>
     </tr>
      
     ";
@@ -141,5 +145,11 @@ else
 
 </table>
 </center>
+<script>
+    function checkdelete()
+    {
+        return confirm('Are you sure you want to delete this record ?');
+    }
+    </script>
 </html>
 
