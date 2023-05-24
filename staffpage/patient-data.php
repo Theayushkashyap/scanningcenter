@@ -83,6 +83,9 @@ if($_POST['register'])
    if($data)
    {
     echo "Data  Inserated into Database";
+    ?>
+    <meta http-equiv= "refresh" content = "0; url = http://localhost:3000/staffpage/staffpage.php" /> 
+    <?php
    }
    else
    {

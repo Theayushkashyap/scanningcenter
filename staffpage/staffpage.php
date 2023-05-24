@@ -90,7 +90,7 @@ if($total != 0)
 {
     ?>
 <h2 align="center">Displaying All Records</h2>
-<center><table border="3" cellspacing="8" width="80%">
+<center><table border="3" cellspacing="8" width="85%">
     <tr>
     <th width="10%">Patient ID</th>
     <th width="10%">Patient Name</th>
@@ -99,7 +99,7 @@ if($total != 0)
     <th width="15%">Study Description</th>
     <th width="10%">Contact No</th>
     <th width="10%">Referral Doctor</th>
-    <th width="15%">Operations</th>
+    <th width="20%">Operations</th>
     </tr>
 
 
@@ -118,7 +118,9 @@ if($total != 0)
     <td>".$result['referral_doctor']."</td>
 
     <td><a href='update_staffpage.php?id=$result[patient_id]'><input type='submit' value='Update' class='update'></a>
-    <a href='delete.php?id=$result[patient_id]'><input type='submit' value='Delete' class='delete' onclick = 'return checkdelete()'></a></td>
+    <a href='delete.php?id=$result[patient_id]'><input type='submit' value='Delete' class='delete' onclick = 'return checkdelete()'></a>
+    <a href='report.php?id=$result[patient_id]'><input type='submit' value='Report' class='report'></a>
+    </td>
     </tr>
      
     ";
