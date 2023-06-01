@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Word Processor</title>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <link rel="stylesheet" href="editor.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <style>
+        #editor {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #ccc;
+        }
+
+        .options-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+
+        .options-container button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <!-- Navigation code goes here -->
+        </nav>
+    </div>
+
+    <div id="toolbar">
+        <select class="ql-font">
+            <option selected>Sans Serif</option>
+            <option value="Arial">Arial</option>
+            <option value="Calibri">Calibri</option>
+            <option value="Comic Sans MS">Comic Sans MS</option>
+            <option value="Verdana">Verdana</option>
+        </select>
+        <select class="ql-size">
+            <option value="10px">10</option>
+            <option value="13px">13</option>
+            <option value="16px">16</option>
+            <option value="19px">19</option>
+            <option value="22px">22</option>
+            <option value="26px">26</option>
+            <option value="30px">30</option>
+            <option value="36px">36</option>
+            <option value="42px">42</option>
+            <option value="48px">48</option>
+            <option value="64px">64</option>
+            <option value="92px">92</option>
+        </select>
+        <button class="ql-bold"></button>
+        <button class="ql-italic"></button>
+        <button class="ql-underline"></button>
+    </div>
+    <div id="editor"></div>
+
+    <div class="options-container">
+        <button onclick="exportAsPDF()">Export as PDF</button>
+        <button onclick="printContent()">Print</button>
+    </div>
+
+    <script>
+        const Size = Quill.import('attributors/style/size');
+        Size.whitelist = ['10px', '13px', '16px', '19px', '22px', '26px', '30px', '36px', '42px', '48px', '64px', '92px'];
+        Quill.register(Size, true);
+
+        const Font = Quill.import('formats/font');
+        Font.whitelist = ['Arial', 'Calibri', 'Comic Sans MS', 'Verdana'];
+        Quill.register(Font, true);
+
+        const quill = new Quill('#editor', {
+            theme: 'snow',
+            modules: {
+                toolbar: {
+                    container: '#toolbar',
+                },
+                mention: {
+                    allowedChars: /^[A-Za-z\sÅÄÖåäö]*$/,
+                    mentionDenotationChars: ['@'],
+                    source: function (searchTerm, renderList, mentionChar) {
+                        const mentionList = [
+                            { id: 1, value: 'John Doe' },
+                            { id: 2, value: 'Jane Smith' },
+                            { id: 3, value: 'David Johnson' },
+                            { id: 4, value: 'Lisa Anderson' }
+                        ];
+                        const matches = [];
+                        for (let i = 0; i < mentionList.length; i++) {
+                            if (mentionList[i].value.toLowerCase().includes(searchTerm.toLowerCase())) {
+                                matches.push(mentionList[i]);
+                            }
+                        }
+                        renderList(matches);
+                    },
+                }
+            }
+        });
+
+        function exportAsPDF() {
+            const content = quill.root.innerHTML;
+
+            const pdf = new jsPDF();
+            pdf.fromHTML(content, 15, 15, { 'width': 170 });
+            pdf.save('document.pdf');
+        }
+
+        function printContent() {
+            const content = quill.root.innerHTML;
+            const printWindow = window.open('', '_blank');
+            printWindow.document.open();
+            printWindow.document.write(content);
+            printWindow.document.close();
+            printWindow.print();
+        }
+    </script>
+</body>
+</html>

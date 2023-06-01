@@ -139,8 +139,7 @@ if(isset($_POST['submit'])){
                         <h1 class="display-4">Vismaya Scanning center</h1>
                     </div>
                     <p class="text-white mb-5">We are here to provide you with comprehensive and accurate diagnostic services to ensure your well-being. Whether you're visiting us for routine check-ups, specialized screenings, or advanced medical imaging, we strive to deliver exceptional care and accurate results..</p>
-                    <a class="btn btn-dark rounded-pill py-3 px-5 me-3" href="">Find Doctor</a>
-                    <a class="btn btn-outline-dark rounded-pill py-3 px-5" href="">Read More</a>
+                  
                 </div>
                 <div class="form-container">
         <form action=""method="post">
