@@ -1,15 +1,13 @@
-.body {
-    background-image: url('/fotor-ai-2023051211757.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+
 .form-container{
-    min-height: 100vh;
+    min-height: 10vh;
     display: flex;
-    align-items: center;
+    position: absolute;
+    top: 30%;
+    left:25%;
     justify-content: center;
     padding: 20px;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
     
 }
 
