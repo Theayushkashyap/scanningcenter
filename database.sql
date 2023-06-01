@@ -1,1 +1,0 @@
-SELECT * FROM scanning.user_form;
