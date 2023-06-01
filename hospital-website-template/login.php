@@ -119,9 +119,9 @@ if(isset($_POST['submit'])){
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <a href="service.html" class="nav-item nav-link">Service</a>
-                        <a href="price.html" class="nav-item nav-link active">Pricing</a>
+                        <a href="price.html" class="nav-item nav-link">Pricing</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
-                        <a href="/main/login_form.php" class="nav-item nav-link">Login</a>
+                        <a href="http://localhost:3000/hospital-website-template/login.php" class="nav-item nav-link  active">Login</a>
                     </div>
                 </div>
             </nav>
@@ -135,10 +135,10 @@ if(isset($_POST['submit'])){
             <div class="row gx-5">
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="mb-4">
-                        <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">Appointment</h5>
-                        <h1 class="display-4">Login to Vismaya Scanning center</h1>
+                        <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">Login to</h5>
+                        <h1 class="display-4">Vismaya Scanning center</h1>
                     </div>
-                    <p class="text-white mb-5">Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus sed.</p>
+                    <p class="text-white mb-5">We are here to provide you with comprehensive and accurate diagnostic services to ensure your well-being. Whether you're visiting us for routine check-ups, specialized screenings, or advanced medical imaging, we strive to deliver exceptional care and accurate results..</p>
                     <a class="btn btn-dark rounded-pill py-3 px-5 me-3" href="">Find Doctor</a>
                     <a class="btn btn-outline-dark rounded-pill py-3 px-5" href="">Read More</a>
                 </div>
@@ -154,7 +154,7 @@ if(isset($_POST['submit'])){
       ?>
             <input type="email" name="email" required placeholder="Enter your email" >
             <input type="password" name="password" required placeholder="Enter your password">
-        <input type="submit" name="submit" value="Login now" class="form-btn">
+        <input type="submit" name="submit" value="Login" class="form-btn">
         </form>
     </div>
                             </div>
