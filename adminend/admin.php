@@ -59,7 +59,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                         <p>Help & Support</p>
                         <span>></span>
                     </a>
-                    <a href="../main/login_form.php" class="sub-menu-link">
+                    <a href="http://localhost:3000/hospital-website-template/index.html" class="sub-menu-link">
                         <img src="../images/logout.png" >
                         <p>Logout</p>
                         <span>></span>

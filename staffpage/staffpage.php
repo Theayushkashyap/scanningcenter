@@ -33,27 +33,31 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Archive</a></li>
-                <li><a href="#">Daily Report</a></li>
+                <li><a href="archive.php">Archive</a></li>
+                <li><a href="daily.php">Daily Report</a></li>
                 <li><a href="#">Payment Details</Details></a></li>
+                
             </ul>
             
 
             <img src="../images/user.png" class="user-pic" onclick="toggleMenu()">
 
             <div class="sub-menu-wrap" id="subMenu">
+            
                 <div class="sub-menu">
                     <div class="user-info">
-                        <img src="../images/user.png" >
+                        <img src="../images/user.png">
                         <h2><span><?php echo $_SESSION['user_name'] ?></span></h2>
+                        
                     </div>
                     <hr>
-                    <a href="#" class="sub-menu-link">
+
+                    <a href="edit.php" class="sub-menu-link">
                         <img src="../images/profile.png" >
                         <p>Edit Profile</p>
                         <span>></span>
                     </a>
-                    <a href="#" class="sub-menu-link">
+                    <a href="settings.php" class="sub-menu-link">
                         <img src="../images/setting.png" >
                         <p>Settings & Privacy </p>
                         <span>></span>
@@ -63,11 +67,12 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                         <p>Help & Support</p>
                         <span>></span>
                     </a>
-                    <a href="/Sample/Index.html" class="sub-menu-link">
+                    <a href="http://localhost:3000/hospital-website-template/index.html" class="sub-menu-link">
                         <img src="../images/logout.png" >
                         <p>Logout</p>
                         <span>></span>
                     </a>
+                   
                     
                     
                 </div>
