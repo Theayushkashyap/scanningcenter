@@ -82,7 +82,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
         <?php
                     include("connection.php");
 error_reporting(0);
-$query = "SELECT * FROM FORM";
+$query = "SELECT * FROM patient_form";
 $data = mysqli_query($conn, $query);
 
 $total = mysqli_num_rows($data);

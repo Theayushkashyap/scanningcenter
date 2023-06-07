@@ -1,7 +1,7 @@
 <?php include("connection.php");
 $id = $_GET['id'];
 
-$query = "SELECT * FROM FORM where patient_id= '$id'";
+$query = "SELECT * FROM patient_form where patient_id= '$id'";
 $data = mysqli_query($conn, $query);
 $result = mysqli_fetch_assoc($data);
 ?>
@@ -103,7 +103,7 @@ if($_POST['update'])
    $cno   = $_POST['contact_no'];
    $rdoc  = $_POST['referral_doctor'];
 
-   $query = "UPDATE form set patient_id='$pid',patient_name='$pname',age='$age',gender='$gen',study_description='$sdesc',contact_no='$cno',referral_doctor='$rdoc' WHERE patient_id='$id'";
+   $query = "UPDATE patient_form set patient_id='$pid',patient_name='$pname',age='$age',gender='$gen',study_description='$sdesc',contact_no='$cno',referral_doctor='$rdoc' WHERE patient_id='$id'";
    $data = mysqli_query($conn,$query);
    if($data)
    {

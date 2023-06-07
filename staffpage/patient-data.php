@@ -78,7 +78,7 @@ if($_POST['register'])
    $cno   = $_POST['contactno'];
    $rdoc  = $_POST['referraldoctor'];
 
-   $query = "INSERT INTO form (patient_id,patient_name,age,gender,study_description,contact_no,referral_doctor) VALUES('$pid','$pname','$age','$gen','$sdesc','$cno','$rdoc')";
+   $query = "INSERT INTO scanning.patient_form (patient_id,patient_name,age,gender,study_description,contact_no,referral_doctor) VALUES('$pid','$pname','$age','$gen','$sdesc','$cno','$rdoc')";
    $data = mysqli_query($conn,$query);
    if($data)
    {

@@ -2,7 +2,7 @@
 include("connection.php");
 
 $id = $_GET['id'];
-$query = "DELETE FROM FORM WHERE patient_id = '$id'";
+$query = "DELETE FROM patient_form WHERE patient_id = '$id'";
 $data = mysqli_query($conn,$query);
 
 if($data)
