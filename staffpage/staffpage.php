@@ -79,6 +79,21 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
             </div>
         
         </nav>
+        <div class="search">
+        <div class="icon"></div>
+        <div class="input">
+            <input type="text" placeholder="Search" id="mysearch">
+        </div>
+        <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
+    </div>
+
+    <script>
+        const icon = document.querySelector('.icon');
+        const search = document.querySelector('.search');
+        icon.onclick = function(){
+            search.classList.toggle('active')
+        }
+    </script>
         <?php
                     include("connection.php");
 error_reporting(0);

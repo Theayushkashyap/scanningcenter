@@ -21,6 +21,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
          </head>
 
 <body>
+    
 <div class="hero">
         <nav>
             <img src="../images/Untitled-1.png" class="logo">
@@ -72,6 +73,21 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
             </div>
         
         </nav>
+        <div class="search">
+        <div class="icon"></div>
+        <div class="input">
+            <input type="text" placeholder="Search" id="mysearch">
+        </div>
+        <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
+    </div>
+
+    <script>
+        const icon = document.querySelector('.icon');
+        const search = document.querySelector('.search');
+        icon.onclick = function(){
+            search.classList.toggle('active')
+        }
+    </script>
 <?php
                     include("connection.php");
 error_reporting(0);
@@ -87,6 +103,7 @@ $total = mysqli_num_rows($data);
 if($total != 0)
 {
     ?>
+   
 <h2 align="center">Displaying All Records</h2>
 <center><table border="3" cellspacing="8" width="85%">
     <tr>
