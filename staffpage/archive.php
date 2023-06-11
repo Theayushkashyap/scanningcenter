@@ -1,4 +1,3 @@
-
 <?php
 @include 'config.php';
 session_start();
@@ -22,18 +21,12 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
          </head>
 
 <body>
-
-<a href="./patient-data.php" >                    
-<button class="plus-button">+</button> 
-</a>
-
-    <div class="hero">
+<div class="hero">
         <nav>
             <img src="../images/Untitled-1.png" class="logo">
 
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="archive.php">Archive</a></li>
+                <li><a href="http://localhost:3000/staffpage/staffpage.php">Home</a></li>
                 <li><a href="daily.php">Daily Report</a></li>
                 <li><a href="#">Payment Details</Details></a></li>
                 
@@ -79,7 +72,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
             </div>
         
         </nav>
-        <?php
+<?php
                     include("connection.php");
 error_reporting(0);
 $query = "SELECT * FROM patient_form";
@@ -94,7 +87,7 @@ $total = mysqli_num_rows($data);
 if($total != 0)
 {
     ?>
-<h2 align="center">Displaying Today's Records</h2>
+<h2 align="center">Displaying All Records</h2>
 <center><table border="3" cellspacing="8" width="85%">
     <tr>
     <th width="10%">Patient ID</th>
@@ -159,4 +152,3 @@ else
     }
     </script>
 </html>
-
