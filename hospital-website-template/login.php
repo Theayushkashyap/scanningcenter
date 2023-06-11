@@ -11,7 +11,7 @@ if(isset($_POST['submit'])){
   $user_type = $_POST['user_type'];
 
   // Check if the email already exists
-  $select = "SELECT * FROM user_form WHERE email = '$email'";
+  $select = "SELECT * FROM login_data WHERE email = '$email'";
   $result = mysqli_query($conn, $select);
   
   if(mysqli_num_rows($result) > 0){

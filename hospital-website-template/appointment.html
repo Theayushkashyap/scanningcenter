@@ -1,3 +1,31 @@
+
+<?php
+@include 'config.php';
+// Step : Retrieve form data
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $department = $_POST["department"];
+    $doctor = $_POST["doctor"];
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $date = $_POST["date"];
+    $time = $_POST["time"];
+
+    // Step 3: Validate and sanitize form data (you can add your own validation logic here)
+
+    // Step 4: Insert form data into the database
+    $sql = "INSERT INTO appointments (department, doctor, name, email, date, time)
+            VALUES ('$department', '$doctor', '$name', '$email', '$date', '$time')";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "Appointment booked successfully.";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+    // Step 5: Close the database connection
+    mysqli_close($conn);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,8 +1,6 @@
 <?php
-
 @include 'config.php';
-if(isset($_POST['submit'])){
-
+if (isset($_POST['submit'])) {
   $name = mysqli_real_escape_string($conn, $_POST['name']);
   $email = mysqli_real_escape_string($conn, $_POST['email']);
   $password = $_POST['password'];
@@ -10,33 +8,33 @@ if(isset($_POST['submit'])){
   $user_type = $_POST['user_type'];
 
   // Check if the email already exists
-  $select = "SELECT * FROM user_form WHERE email = '$email'";
+  $select = "SELECT * FROM login_data WHERE email = '$email'";
   $result = mysqli_query($conn, $select);
-  
-  if(mysqli_num_rows($result) > 0){
+
+  if (mysqli_num_rows($result) > 0) {
     $error[] = 'User already exists!';
-  }
-  else{
-    if($password != $cpassword){
+  } else {
+    if ($password != $cpassword) {
       $error[] = 'Passwords do not match!';
-    }
-    else{
+    } else {
       // Hash the password using bcrypt
       $hash = password_hash($password, PASSWORD_BCRYPT);
 
       // Insert the user details into the database
-      $insert = "INSERT INTO user_form (name, email, password, user_type) VALUES ('$name', '$email', '$hash', '$user_type')";
+      $insert = "INSERT INTO login_data (name, email, password, user_type) VALUES ('$name', '$email', '$hash', '$user_type')";
       mysqli_query($conn, $insert);
 
-      // Redirect to the login page
-      header('location:http://localhost/scanningcenter/main/login_form.php');
+      // Redirect to the registration form with a success message
+      header('location:register.php?success=' . urlencode("New $user_type has been registered."));
+      exit();
     }
   }
-};
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,29 +42,31 @@ if(isset($_POST['submit'])){
   <title>Register Form</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    
   </style>
 </head>
+
 <body>
 
   <div class="form-container">
     <form action="" method="post">
       <h3>Register Now</h3>
-      
-      
-      <?php 
-      if(isset($error)){
-        foreach($error as $error){
-          echo '<span class="error-msg">'.$error.'</span>';
+
+      <?php
+      if (isset($error)) {
+        foreach ($error as $error) {
+          echo '<span class="error-msg">' . $error . '</span>';
         };
-      };
+      }
+      if (isset($_GET['success'])) {
+        echo '<span class="success-msg">' . $_GET['success'] . '</span>';
+      }
       ?>
       <input type="text" name="name" required placeholder="Enter your name">
       <input type="email" name="email" required placeholder="Enter your email">
       <input type="password" name="password" required placeholder="Enter your password">
       <input type="password" name="cpassword" required placeholder="Confirm your password">
       <select name="user_type">
-        <option value="user">User</option>
+        <option value="staff">staff</option>
         <option value="admin">Admin</option>
       </select>
       <input type="submit" name="submit" value="Register Now" class="form-btn">
@@ -74,4 +74,6 @@ if(isset($_POST['submit'])){
     </form>
   </div>
 </body>
+
 </html>
+
