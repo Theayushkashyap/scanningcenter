@@ -1,31 +1,29 @@
-
 <?php
-@include 'config.php';
-// Step : Retrieve form data
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $department = $_POST["department"];
-    $doctor = $_POST["doctor"];
+$conn = mysqli_connect('localhost', 'root', '', 'scanning', 3306);
+if (isset($_POST['submit'])) {
     $name = $_POST["name"];
-    $email = $_POST["email"];
-    $date = $_POST["date"];
-    $time = $_POST["time"];
+    $age = $_POST["age"];
+    $gender =  $_POST["gender"];
+    $service = $_POST["service"];
+    $doctor = $_POST["doctor"];
+    $phone_no = $_POST["phone_no"];
 
     // Step 3: Validate and sanitize form data (you can add your own validation logic here)
 
-    // Step 4: Insert form data into the database
-    $sql = "INSERT INTO appointments (department, doctor, name, email, date, time)
-            VALUES ('$department', '$doctor', '$name', '$email', '$date', '$time')";
+    $insert = "INSERT INTO appointments (name, age, gender, service, doctor, phone_no) VALUES ('$name', '$age', '$gender', '$service', '$doctor', '$phone_no')";
+    mysqli_query($conn, $insert);
 
-    if (mysqli_query($conn, $sql)) {
+    if (mysqli_query($conn, $insert)) {
         echo "Appointment booked successfully.";
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        echo "Error: " . $insert . "<br>" . mysqli_error($conn);
     }
 
     // Step 5: Close the database connection
     mysqli_close($conn);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -140,43 +138,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <form>
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <select class="form-select bg-white border-0" style="height: 55px;">
-                                        <option selected>Choose Department</option>
-                                        <option value="1">Department 1</option>
-                                        <option value="2">Department 2</option>
-                                        <option value="3">Department 3</option>
+                                    <select class="form-select bg-white border-0" name="service" style="height: 55px;">
+                                        <option selected>Choose_service</option>
+                                        <option value="1">Pregnancy Scannig</option>
+                                        <option value="2">Abdomen Scanning</option>
+                                        <option value="3">X-ray</option>
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <select class="form-select bg-white border-0" style="height: 55px;">
-                                        <option selected>Select Doctor</option>
-                                        <option value="1">Doctor 1</option>
-                                        <option value="2">Doctor 2</option>
-                                        <option value="3">Doctor 3</option>
-                                    </select>
+                                    <input type="text" class="form-control bg-white border-0" name="doctor"placeholder="Consulting Dr" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control bg-white border-0" placeholder="Your Name" style="height: 55px;">
+                                    <input type="text" class="form-control bg-white border-0"name="name" placeholder="Your Name" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control bg-white border-0" placeholder="Your Email" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="date" id="date" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control bg-white border-0 datetimepicker-input"
-                                            placeholder="Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
+                                    <input type="text" class="form-control bg-white border-0" name="age" placeholder="Age" style="height: 55px;">
                                     </div>
-                                </div>
                                 <div class="col-12 col-sm-6">
-                                    <div class="time" id="time" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control bg-white border-0 datetimepicker-input"
-                                            placeholder="Time" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
+                                    <input type="text" class="form-control bg-white border-0" name="gender" placeholder="Gender" style="height: 55px;">
                                     </div>
-                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control bg-white border-0" name="phone_no" placeholder="phone no" style="height: 55px;">
+                                    </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Make An Appointment</button>
+                                    <button class="btn btn-primary w-100 py-3" name ="submit" type="submit">Make An Appointment</button>
                                 </div>
                             </div>
                         </form>
