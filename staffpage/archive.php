@@ -76,13 +76,35 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
         <div class="search">
         <div class="icon"></div>
         <div class="input">
-            <input type="text" placeholder="Search" id="mysearch">
+            <input type="text" id="mysearch" onkeyup='tableSearch()' placeholder="Search">
         </div>
         <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
     </div>
 
-    <script>
-        const icon = document.querySelector('.icon');
+    <script type="application/javascript">
+        function tableSearch(){
+            let input, filter, table, tr, td, i, txtValue;
+   
+        input = document.getElementById("mysearch");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable")
+        tr = table.getElementsByTagName("tr");
+
+        for(let i = 0; i < tr.length; i++){
+            td = tr[i].getElementsByTagName("td")[0];
+            if(td){
+                txtValue = td.textContent || td.innerText;
+                if(txtValue.toUpperCase().indexOf(filter) > -1){
+                    tr[i].style.display = "";
+                        
+            }
+            else{
+                tr[i].style.display = "none";
+            }
+        }
+        }
+    }
+    const icon = document.querySelector('.icon');
         const search = document.querySelector('.search');
         icon.onclick = function(){
             search.classList.toggle('active')
@@ -105,7 +127,7 @@ if($total != 0)
     ?>
    
 <h2 align="center">Displaying All Records</h2>
-<center><table border="3" cellspacing="8" width="85%">
+<center><table class="table" id="myTable" data-filter-control="true" data-show-search-clear-button="true" cellspacing="8" width="85%">
     <tr>
     <th width="10%">Patient ID</th>
     <th width="10%">Patient Name</th>
