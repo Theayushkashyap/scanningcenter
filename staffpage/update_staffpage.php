@@ -4,8 +4,12 @@ $id = $_GET['id'];
 $query = "SELECT * FROM patient_form where patient_id= '$id'";
 $data = mysqli_query($conn, $query);
 $result = mysqli_fetch_assoc($data);
+$id = $_GET['id'];
+$query = "DELETE FROM patient_form WHERE patient_id = '$id'";
+$data = mysqli_query($conn,$query);
 ?>
 <?php error_reporting(0); ?>
+
 <!DOCTYPE HTML>
 <html>
 
@@ -84,12 +88,24 @@ $result = mysqli_fetch_assoc($data);
             <div class="input-field">
                 <input type="submit" value="Update Details" class="btn" name="update">
             </div>
+            <div class="input-field">
+                <input type="submit" value="Delete" class="btn" name="delete" onclick = 'return checkdelete()'>
+            </div>
+            
+        
         </div>
     </div>
 </form>
     </div>
 </body>
+<script>
+    function checkdelete()
+    {
+        return confirm('Are you sure you want to delete this record ?');
+    }
+    </script>
 
+   
 </html>
 
 <?php
@@ -102,6 +118,7 @@ if($_POST['update'])
    $sdesc = $_POST['study_description'];
    $cno   = $_POST['contact_no'];
    $rdoc  = $_POST['referral_doctor'];
+   
 
    $query = "UPDATE patient_form set patient_id='$pid',patient_name='$pname',age='$age',gender='$gen',study_description='$sdesc',contact_no='$cno',referral_doctor='$rdoc' WHERE patient_id='$id'";
    $data = mysqli_query($conn,$query);
@@ -118,3 +135,4 @@ if($_POST['update'])
    }
 }
 ?> 
+ 

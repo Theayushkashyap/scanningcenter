@@ -11,6 +11,8 @@
   min-height: 100vh;
   background: lightblue;
   color: black;
+  align-items: center;
+ 
 }
 
 nav {
@@ -27,7 +29,7 @@ nav {
 table {
   background-color: white;
   border-color: purple;
-
+  text-align: center;
 }
 
 .update {
@@ -42,7 +44,7 @@ table {
   cursor: pointer;
 }
 
-.delete {
+.print {
   background-color: rgb(165, 30, 30);
   color: white;
   border: 0;
@@ -103,7 +105,7 @@ nav ul li a {
   max-height: 0px;
   overflow: hidden;
   transition: max-height 0.5s;
-  background-color: #1a1a1a;
+
 }
 
 .sub-menu-wrap.open-menu {
