@@ -69,9 +69,12 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
             </div>
         
         </nav>
-
+        <div>
+        <img src="/adminend/Slide1.JPG" >
+    </div>
 
     </div>
+   
 <script>
     let subMenu = document.getElementById("subMenu");
 
