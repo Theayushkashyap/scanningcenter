@@ -1,3 +1,4 @@
+
 <?php 
 if(isset($_GET['id']) ) {
 include("connection.php");
@@ -85,7 +86,10 @@ $result = mysqli_fetch_assoc($data);
             <div class="input-field">
                 <input type="submit" value="Update Details" class="btn" name="update">
             </div>
-  
+            <div class="input-field">
+                <input type="submit" value="Delete" class="btn"
+                name="delete">
+    </div>
             </div>
             
         
@@ -93,11 +97,13 @@ $result = mysqli_fetch_assoc($data);
     </div>
 </form>
     </div>
+ 
 </body>
 
+    </html>
+ 
 
-   
-</html>
+
 
 <?php
 if($_POST['update'])
@@ -126,4 +132,6 @@ if($_POST['update'])
    }
 }
 ?> 
+
+
 
