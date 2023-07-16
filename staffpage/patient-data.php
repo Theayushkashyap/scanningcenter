@@ -59,6 +59,7 @@
             <div class="input-field">
                 <input type="submit" value="Register" class="btn" name="register">
             </div>
+          
         </div>
     </div>
 </form>

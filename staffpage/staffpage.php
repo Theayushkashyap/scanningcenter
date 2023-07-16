@@ -164,7 +164,7 @@ if($total != 0)
     <td><a href='update_staffpage.php?id=$result[patient_id]'><input type='submit' value='Update' class='update'></a>
     <a href='http://localhost:3000/editor.html?id=$result[patient_id]'><input type='submit' value='Report' class='report'></a>
     <a href='print.php?id=$result[patient_id]'><input type='submit' value='Print' class='print'></a>
-    <a href='delete.php?id=$result[patient_id]'><input type='submit' value='Delete' class='delete' onclick = 'return checkdelete()'></a>
+    <a href='delete.php?id=$result[patient_id]'><input type='submit' value='X' class='delete' onclick = 'return checkdelete()'></a>
     </td>
     </tr>
      

@@ -8,7 +8,9 @@ $query = "SELECT * FROM patient_form where patient_id= '$id'";
 $data = mysqli_query($conn, $query);
 $result = mysqli_fetch_assoc($data);
 }
+
 ?>
+
 <?php error_reporting(0); ?>
 <!DOCTYPE HTML>
 <html>
@@ -86,19 +88,24 @@ $result = mysqli_fetch_assoc($data);
             <div class="input-field">
                 <input type="submit" value="Update Details" class="btn" name="update">
             </div>
-            <div class="input-field">
-                <input type="submit" value="Delete" class="btn"
-                name="delete">
-    </div>
-            </div>
-            
-        
+          
+ 
+</div>
         </div>
     </div>
 </form>
     </div>
+    <script>
+    
+    let subMenu = document.getElementById("subMenu");
+
+    function toggleMenu(){
+        subMenu.classList.toggle("open-menu");
+    }
+</script>
  
 </body>
+
 
     </html>
  

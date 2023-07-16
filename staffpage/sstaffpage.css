@@ -315,3 +315,15 @@ body {
   background: #999;
   transform: rotate(-45deg);
 }
+.delete{
+  background-color: rgb(227, 231, 15);
+  color: rgb(14, 13, 13);
+  border: 0;
+  outline: none;
+  border-radius: 50px;
+  height: 25px;
+  width: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}

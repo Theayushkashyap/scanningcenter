@@ -19,7 +19,7 @@ body {
   align-self: center;
   max-width: 500px;
   width: 100%;
-  margin: 20px auto;
+  margin: 40px auto;
   padding: 30px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   position: relative;
@@ -41,7 +41,7 @@ body {
 }
 
 .container .form .input-field {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,7 +50,7 @@ body {
 .container .form .input-field label {
   width: 200px;
   margin-right: 10px;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .container .form .input-field .input,
@@ -58,7 +58,7 @@ body {
   width: 100%;
   outline: none;
   border: 2px solid #d071f9;
-  font-size: 15px;
+  font-size: 16px;
   padding: 8px 10px;
   border-radius: 3px;
   transition: all 0.5s ease;
@@ -102,7 +102,7 @@ body {
   border: 2px solid purple;
 }
 
-.container .form .input-field .btn {
+.container .form .input-field .btn{
   width: 100%;
   padding: 8px 10px;
   font-size: 20px;
@@ -115,12 +115,27 @@ body {
 }
 
 .container .form .input-field:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
 
 .container .form .input-field .btn:hover {
   background: purple;
 }
+.container .form .input-field .second
+{
+  width: 100%;
+  padding: 5px 10px;
+  margin-left: 350px;
+  font-size: 18px;
+  border: 0;
+  background: #9f1212;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+  margin-bottom: -10px;
+}
+
 
 @media (max-width: 420px) {
   .container .form .input-field {
