@@ -106,10 +106,10 @@ if (isset($_POST['submit'])) {
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
+                    
                         <a href="price.html" class="nav-item nav-link">Pricing</a> 
-                        <a href="http://localhost:3000/hospital-website-template/report.php" class="nav-item nav-link">Download your Report</a>                      
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="http://localhost:3000/hospital-website-template/report.php" class="nav-item nav-link">Download Report</a>                      
+                      
                         <a href="login.php" class="nav-item nav-link">Login</a>
                     </div>
                 </div>
@@ -118,50 +118,102 @@ if (isset($_POST['submit'])) {
     </div>
     <!-- Navbar End -->
 
-
-    <!-- Appointment Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
+ <!-- Appointment Start -->
+ <div class="container-fluid bg-primary my-5 py-5">
+        <div class="container py-5">
             <div class="row gx-5">
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="mb-4">
-                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Appointment</h5>
+                        <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">Appointment</h5>
                         <h1 class="display-4">Make An Appointment For Your Family</h1>
                     </div>
-                    <p class="mb-5">Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus sed.</p>
-                    <a class="btn btn-primary rounded-pill py-3 px-5 me-3" href="">Find Doctor</a>
-                    <a class="btn btn-outline-primary rounded-pill py-3 px-5" href="">Read More</a>
+                    <p class="text-white mb-5">Our dedicated team of healthcare professionals is here to 
+                        provide top-quality care and support for your loved ones. To
+                        schedule an appointment for your family, simply fill out the 
+                        appointment request form.
+                        
+                        </p>
+                        <style>
+                            /* Hide the details element by default */
+                            details {
+                              display: none;
+                            }
+                          
+                            /* When the input is checked, display the details element */
+                            input:checked + details {
+                              display: block;
+                            }
+                          
+                            /* Style the "Read More" button */
+                            .btn-container {
+                              display: inline-block;
+                              cursor: pointer;
+                              padding: 10px;
+                              border: 1px solid #ffffff;
+                              border-radius: 5px;
+                            }
+                          </style>
+                          
+                          <!-- Wrap the input and details elements with a label -->
+                          <label for="details-toggle" class="btn-container" style="color: #ffffff;">
+                            Read More
+                            <input type="checkbox" id="details-toggle" style="display: none;">
+                            <details>
+                              <summary>
+                                Please provide your contact information and preferred dates,
+                                and we will do our best to accommodate your schedule.
+                                Our staff will get in touch with you shortly to confirm the
+                                appointment and answer any questions you may have.
+                                Thank you for choosing us as your healthcare partner.
+                                We look forward to serving you and your family's medical needs.
+                              </summary>
+                            </details>
+                          </label>
+                          
                 </div>
                 <div class="col-lg-6">
-                    <div class="bg-light text-center rounded p-5">
+                    <div class="bg-white text-center rounded p-5">
                         <h1 class="mb-4">Book An Appointment</h1>
                         <form>
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <select class="form-select bg-white border-0" name="service" style="height: 55px;">
-                                        <option selected>Choose_service</option>
-                                        <option value="1">Pregnancy Scannig</option>
-                                        <option value="2">Abdomen Scanning</option>
-                                        <option value="3">X-ray</option>
+                                    <select class="form-select bg-light border-0" style="height: 55px;">
+                                        <option selected>Choose Department</option>
+                                        <option value="1">Department 1</option>
+                                        <option value="2">Department 2</option>
+                                        <option value="3">Department 3</option>
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control bg-white border-0" name="doctor"placeholder="Consulting Dr" style="height: 55px;">
+                                    <select class="form-select bg-light border-0" style="height: 55px;">
+                                        <option selected>Select Doctor</option>
+                                        <option value="1">Doctor 1</option>
+                                        <option value="2">Doctor 2</option>
+                                        <option value="3">Doctor 3</option>
+                                    </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control bg-white border-0"name="name" placeholder="Your Name" style="height: 55px;">
+                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control bg-white border-0" name="age" placeholder="Age" style="height: 55px;">
-                                    </div>
+                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
+                                </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control bg-white border-0" name="gender" placeholder="Gender" style="height: 55px;">
+                                    <div class="date" id="date" data-target-input="nearest">
+                                        <input type="text"
+                                            class="form-control bg-light border-0 datetimepicker-input"
+                                            placeholder="Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
                                     </div>
+                                </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control bg-white border-0" name="phone_no" placeholder="phone no" style="height: 55px;">
+                                    <div class="time" id="time" data-target-input="nearest">
+                                        <input type="text"
+                                            class="form-control bg-light border-0 datetimepicker-input"
+                                            placeholder="Time" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
                                     </div>
+                                </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" name ="submit" type="submit">Make An Appointment</button>
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Make An Appointment</button>
                                 </div>
                             </div>
                         </form>
@@ -172,15 +224,14 @@ if (isset($_POST['submit'])) {
     </div>
     <!-- Appointment End -->
 
-
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light mt-5 py-5">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Get In Touch</h4>
-                    <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor</p>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>123 Street, New York, USA</p>
+                    
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Address: 3rd Main Rd, opposite Krishna Raja Extension, Krishna Raja Extension, Tiptur, Karnataka 572202</p>
                     <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@example.com</p>
                     <p class="mb-0"><i class="fa fa-phone-alt text-primary me-3"></i>+012 345 67890</p>
                 </div>
@@ -198,11 +249,10 @@ if (isset($_POST['submit'])) {
                     <div class="d-flex flex-column justify-content-start">
                         <a class="text-light mb-2" href="index.html"><i class="fa fa-angle-right me-2"></i>Home</a>
                         <a class="text-light mb-2" href="about.html"><i class="fa fa-angle-right me-2"></i>About Us</a>
-                        <a class="text-light mb-2" href="appointment.html"><i class="fa fa-angle-right me-2"></i>Boobk an apointment</a>
+                        <a class="text-light mb-2" href="appointment.php"><i class="fa fa-angle-right me-2"></i>Book an apointment</a>
                         <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Office</a>
                         <a class="text-light" href="contact.html"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
                     </div>
-                </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Newsletter</h4>
@@ -227,16 +277,16 @@ if (isset($_POST['submit'])) {
         <div class="container">
             <div class="row g-5">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-md-0">&copy; <a class="text-primary" href="#">Your Site Name</a>. All Rights Reserved.</p>
+                    <p class="mb-md-0">&copy; <a class="text-primary" href="#">Vismaya Scanning Center</a>. All Rights Reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <p class="mb-0">Designed by <a class="text-primary" href="https://htmlcodex.com">HTML Codex</a></p>
+                </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Footer End -->
-
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
