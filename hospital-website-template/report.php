@@ -117,10 +117,10 @@ if(isset($_POST['submit'])){
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
+                        
                         <a href="price.html" class="nav-item nav-link">Pricing</a>
-                        <a href="report.php" class="nav-item nav-link active">Download Your Report</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="report.php" class="nav-item nav-link active">Download Report</a>
+                      
                         <a href="http://localhost:3000/hospital-website-template/login.php" class="nav-item nav-link  ">Login</a>
                     </div>
                 </div>
@@ -190,7 +190,7 @@ if(isset($_POST['submit'])){
                     <div class="d-flex flex-column justify-content-start">
                         <a class="text-light mb-2" href="index.html"><i class="fa fa-angle-right me-2"></i>Home</a>
                         <a class="text-light mb-2" href="about.html"><i class="fa fa-angle-right me-2"></i>About Us</a>
-                        <a class="text-light mb-2" href="appointment.html"><i class="fa fa-angle-right me-2"></i>Boobk an apointment</a>
+                        <a class="text-light mb-2" href="appointment.html"><i class="fa fa-angle-right me-2"></i>Book an apointment</a>
                         <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Office</a>
                         <a class="text-light" href="contact.html"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
                     </div>
