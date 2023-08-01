@@ -88,7 +88,9 @@ $result = mysqli_fetch_assoc($data);
             <div class="input-field">
                 <input type="submit" value="Update Details" class="btn" name="update">
             </div>
-          
+            <div class="input-field">
+                <input type="submit" value="Delete" class="btnn" name="delete">
+            </div>
  
 </div>
         </div>
@@ -102,6 +104,22 @@ $result = mysqli_fetch_assoc($data);
     function toggleMenu(){
         subMenu.classList.toggle("open-menu");
     }
+</script>
+<script>
+    const myButton = document.querySelector('.btnn');
+    const list = document.querySelector('.input-field')
+    myButton.addEventListener('click', (e)=>{
+        const close = document.querySelector('#close');
+        for(let i=0; i<close.length; i++) {
+            close[i].addEventListener('click', ()=>{
+                close[i].parentElement.style.opacity = 0;
+                setTimeout(()=>{
+                    close[i].parentElement.style.display = "none";
+        }, 500);
+    })
+}
+inputText.value ="";
+    });
 </script>
  
 </body>
