@@ -118,111 +118,114 @@ if (isset($_POST['submit'])) {
     </div>
     <!-- Navbar End -->
 
- <!-- Appointment Start -->
- <div class="container-fluid bg-primary my-5 py-5">
-        <div class="container py-5">
-            <div class="row gx-5">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <div class="mb-4">
-                        <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">Appointment</h5>
-                        <h1 class="display-4">Make An Appointment For Your Family</h1>
+<!-- Pricing Plan Start -->
+<div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Services</h5>
+                <h1 class="display-4">Medical Assitance</h1>
+            </div>
+            <div class="owl-carousel price-carousel position-relative" style="padding: 0 45px 45px 45px;">
+                <div class="bg-light rounded text-center">
+                    <div class="position-relative">
+                        <img class="img-fluid rounded-top" src="img/price-1.jpg" alt="">
+                        <div class="position-absolute w-100 h-100 top-50 start-50 translate-middle rounded-top d-flex flex-column align-items-center justify-content-center" style="background: rgba(29, 42, 77, .8);">
+                            <h3 class="text-primary">scan</h3>
+                            <h1 class="display-4 text-white mb-0">
+                                <small class="align-top fw-normal" style="font-size: 22px; line-height: 45px;">₹</small>600<small class="align-bottom fw-normal" style="font-size: 16px; line-height: 40px;"></small>
+                            </h1>
+                        </div>
                     </div>
-                    <p class="text-white mb-5">Our dedicated team of healthcare professionals is here to 
-                        provide top-quality care and support for your loved ones. To
-                        schedule an appointment for your family, simply fill out the 
-                        appointment request form.
-                        
+                    <div class="text-center py-5">
+                        <p>Abdominal ultrasound is an imaging test that used to diagnose a wide range of medical issues safely. It is fast and almost painless</p>
+                        <a href="appointment.php" class="btn btn-primary rounded-pill py-3 px-5 my-2">Book Now</a>
+                    </div>
+                </div>
+                <div class="bg-light rounded text-center">
+                    <div class="position-relative">
+                        <img class="img-fluid rounded-top" src="img/price-1.jpg" alt="">
+                        <div class="position-absolute w-100 h-100 top-50 start-50 translate-middle rounded-top d-flex flex-column align-items-center justify-content-center" style="background: rgba(29, 42, 77, .8);">
+                            <h3 class="text-primary">Pregnancy Scan</h3>
+                            <h1 class="display-4 text-white mb-0">
+                                <small class="align-top fw-normal" style="font-size: 22px; line-height: 45px;">₹</small>800<small class="align-bottom fw-normal" style="font-size: 16px; line-height: 40px;"></small>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="text-center py-5">
+                        <p>An early pregnancy scan (dating or booking scan) between 11 and 14 weeks.a mid-pregnancy scan (also known as a fetal anomaly scan) between 18 and 21 weeks
+
                         </p>
-                        <style>
-                            /* Hide the details element by default */
-                            details {
-                              display: none;
-                            }
-                          
-                            /* When the input is checked, display the details element */
-                            input:checked + details {
-                              display: block;
-                            }
-                          
-                            /* Style the "Read More" button */
-                            .btn-container {
-                              display: inline-block;
-                              cursor: pointer;
-                              padding: 10px;
-                              border: 1px solid #ffffff;
-                              border-radius: 5px;
-                            }
-                          </style>
-                          
-                          <!-- Wrap the input and details elements with a label -->
-                          <label for="details-toggle" class="btn-container" style="color: #ffffff;">
-                            Read More
-                            <input type="checkbox" id="details-toggle" style="display: none;">
-                            <details>
-                              <summary>
-                                Please provide your contact information and preferred dates,
-                                and we will do our best to accommodate your schedule.
-                                Our staff will get in touch with you shortly to confirm the
-                                appointment and answer any questions you may have.
-                                Thank you for choosing us as your healthcare partner.
-                                We look forward to serving you and your family's medical needs.
-                              </summary>
-                            </details>
-                          </label>
-                          
-                </div>
-                <div class="col-lg-6">
-                    <div class="bg-white text-center rounded p-5">
-                        <h1 class="mb-4">Book An Appointment</h1>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-12 col-sm-6">
-                                    <select class="form-select bg-light border-0" style="height: 55px;">
-                                        <option selected>Choose Department</option>
-                                        <option value="1">Department 1</option>
-                                        <option value="2">Department 2</option>
-                                        <option value="3">Department 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <select class="form-select bg-light border-0" style="height: 55px;">
-                                        <option selected>Select Doctor</option>
-                                        <option value="1">Doctor 1</option>
-                                        <option value="2">Doctor 2</option>
-                                        <option value="3">Doctor 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="date" id="date" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control bg-light border-0 datetimepicker-input"
-                                            placeholder="Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="time" id="time" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control bg-light border-0 datetimepicker-input"
-                                            placeholder="Time" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Make An Appointment</button>
-                                </div>
-                            </div>
-                        </form>
+                        <a href="appointment.php" class="btn btn-primary rounded-pill py-3 px-5 my-2">Book Now</a>
                     </div>
                 </div>
+                <div class="bg-light rounded text-center">
+                    <div class="position-relative">
+                        <img class="img-fluid rounded-top" src="img/price-1.jpg" alt="">
+                        <div class="position-absolute w-100 h-100 top-50 start-50 translate-middle rounded-top d-flex flex-column align-items-center justify-content-center" style="background: rgba(29, 42, 77, .8);">
+                            <h3 class="text-primary">TV Scan</h3>
+                            <h1 class="display-4 text-white mb-0">
+                                <small class="align-top fw-normal" style="font-size: 22px; line-height: 45px;">₹</small>800<small class="align-bottom fw-normal" style="font-size: 16px; line-height: 40px;"></small>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="text-center py-5">
+                        <p>A transvaginal scan, also known as an internal or endovaginal ultrasound scan.</p>
+                        <a href="appointment.php" class="btn btn-primary rounded-pill py-3 px-5 my-2">Book Now</a>
+                    </div>
+                </div>
+                <div class="bg-light rounded text-center">
+                    <div class="position-relative">
+                        <img class="img-fluid rounded-top" src="img/price-1.jpg" alt="">
+                        <div class="position-absolute w-100 h-100 top-50 start-50 translate-middle rounded-top d-flex flex-column align-items-center justify-content-center" style="background: rgba(29, 42, 77, .8);">
+                            <h3 class="text-primary">X-Ray</h3>
+                            <h1 class="display-4 text-white mb-0">
+                                <small class="align-top fw-normal" style="font-size: 22px; line-height: 45px;">₹</small>700<small class="align-bottom fw-normal" style="font-size: 16px; line-height: 40px;"></small>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="text-center py-5">
+                        <p>X-ray imaging creates pictures of the inside of your body.</p>
+                        <a href="appointment.php" class="btn btn-primary rounded-pill py-3 px-5 my-2">Book Now</a>
+                    </div>
+                </div>
+                <div class="bg-light rounded text-center">
+                    <div class="position-relative">
+                        <img class="img-fluid rounded-top" src="img/price-1.jpg" alt="">
+                        <div class="position-absolute w-100 h-100 top-50 start-50 translate-middle rounded-top d-flex flex-column align-items-center justify-content-center" style="background: rgba(29, 42, 77, .8);">
+                            <h3 class="text-primary">Obstetric Growth Scan</h3>
+                            <h1 class="display-4 text-white mb-0">
+                                <small class="align-top fw-normal" style="font-size: 22px; line-height: 45px;">₹</small>1500<small class="align-bottom fw-normal" style="font-size: 16px; line-height: 40px;"></small>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="text-center py-5">
+                        <p>A Growth Scan is normally done, between 28 – 32 weeks of pregnancy, to assess the growth of your baby and amount of liquor.</p>
+                        <a href="appointment.php" class="btn btn-primary rounded-pill py-3 px-5 my-2">Book Now</a>
+                    </div>
+                </div>
+                <div class="bg-light rounded text-center">
+                    <div class="position-relative">
+                        <img class="img-fluid rounded-top" src="img/price-1.jpg" alt="">
+                        <div class="position-absolute w-100 h-100 top-50 start-50 translate-middle rounded-top d-flex flex-column align-items-center justify-content-center" style="background: rgba(29, 42, 77, .8);">
+                            <h3 class="text-primary">Follicular Study
+                            </h3>
+                            <h1 class="display-4 text-white mb-0">
+                                <small class="align-top fw-normal" style="font-size: 22px; line-height: 45px;">₹</small>700<small class="align-bottom fw-normal" style="font-size: 16px; line-height: 40px;"></small>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="text-center py-5">
+                        <p>Follicular scan or follicular monitoring. This involves a series of scans to ascertain when the mature egg will be released and the uterine walls will thicken.</p>
+                        <a href="appointment.php" class="btn btn-primary rounded-pill py-3 px-5 my-2">Bok Now</a>
+                    </div>
+                </div>
+              
             </div>
         </div>
     </div>
-    <!-- Appointment End -->
+    
+    <!-- Pricing Plan End -->
+
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light mt-5 py-5">
