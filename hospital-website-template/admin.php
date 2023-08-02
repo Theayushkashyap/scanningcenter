@@ -37,6 +37,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin1.css">
 </head>
 <body>
         <!-- Topbar Start -->
@@ -88,7 +89,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                     <div class="navbar-nav ms-auto py-0">
                         <a href="index.html" class="nav-item nav-link">Home</a>
                     
-                        <a href="price.html" class="nav-item nav-link">Archive</a> 
+                        <a href="../main/register.php" class="nav-item nav-link">Add New Staff</a> 
                         <a href="http://localhost:3000/hospital-website-template/report.php" class="nav-item nav-link">Daily Report</a>                      
                       
                         <a href="login.php" class="nav-item nav-link">Logout</a>
@@ -98,8 +99,19 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
         </div>
     </div>
     <!-- Navbar End -->
-
+<div class="wrapper">
+    <div class="containerr">
+    <i class="fa-solid fa-users-medical"></i>
+    <span class="num" data-val="50">000</span>
+    <span class="text">Number of Patients</span>
+    </div>
+    <div class="containerr">
+    <i class="fa-solid fa-users-medical"></i>
+    <span class="num" data-val="10">000</span>
+    <span class="text">Number of Staff</span>
+    </div>
+</div>
    
-    
+    <script src="admin1.js"></script>
 </body>
 </html>
