@@ -68,7 +68,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
         background: #fff;
         padding: 20px;        
         box-shadow: 0 1px 1px rgba(0,0,0,.05);
-    }
+  }
 	.table-title {
         padding-bottom: 10px;
         margin: 0 0 10px;
