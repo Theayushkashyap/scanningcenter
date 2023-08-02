@@ -247,7 +247,7 @@ if (isset($_POST['submit'])) {
                     </div>
                     <div class="text-center py-5">
                         <p>Abdominal ultrasound is an imaging test that used to diagnose a wide range of medical issues safely. It is fast and almost painless</p>
-                        <a href="appointment.php" class="btn btn-primary rounded-pill py-3 px-5 my-2">Book Now</a>
+                        <a href="#" class="btn btn-primary rounded-pill py-3 px-5 my-2">Book Now</a>
                     </div>
                 </div>
                 <div class="bg-light rounded text-center">
@@ -264,7 +264,7 @@ if (isset($_POST['submit'])) {
                         <p>An early pregnancy scan (dating or booking scan) between 11 and 14 weeks.a mid-pregnancy scan (also known as a fetal anomaly scan) between 18 and 21 weeks
 
                         </p>
-                        <a href="appointment.php" class="btn btn-primary rounded-pill py-3 px-5 my-2">Book Now</a>
+                        <a href="#" class="btn btn-primary rounded-pill py-3 px-5 my-2">Book Now</a>
                     </div>
                 </div>
                 <div class="bg-light rounded text-center">
@@ -279,7 +279,7 @@ if (isset($_POST['submit'])) {
                     </div>
                     <div class="text-center py-5">
                         <p>A transvaginal scan, also known as an internal or endovaginal ultrasound scan.</p>
-                        <a href="appointment.php" class="btn btn-primary rounded-pill py-3 px-5 my-2">Book Now</a>
+                        <a href="#" class="btn btn-primary rounded-pill py-3 px-5 my-2">Book Now</a>
                     </div>
                 </div>
                 <div class="bg-light rounded text-center">
@@ -294,7 +294,7 @@ if (isset($_POST['submit'])) {
                     </div>
                     <div class="text-center py-5">
                         <p>X-ray imaging creates pictures of the inside of your body.</p>
-                        <a href="appointment.php" class="btn btn-primary rounded-pill py-3 px-5 my-2">Book Now</a>
+                        <a href="#" class="btn btn-primary rounded-pill py-3 px-5 my-2">Book Now</a>
                     </div>
                 </div>
                 <div class="bg-light rounded text-center">
@@ -309,7 +309,7 @@ if (isset($_POST['submit'])) {
                     </div>
                     <div class="text-center py-5">
                         <p>A Growth Scan is normally done, between 28 – 32 weeks of pregnancy, to assess the growth of your baby and amount of liquor.</p>
-                        <a href="appointment.php" class="btn btn-primary rounded-pill py-3 px-5 my-2">Book Now</a>
+                        <a href="#" class="btn btn-primary rounded-pill py-3 px-5 my-2">Book Now</a>
                     </div>
                 </div>
                 <div class="bg-light rounded text-center">
@@ -325,7 +325,7 @@ if (isset($_POST['submit'])) {
                     </div>
                     <div class="text-center py-5">
                         <p>Follicular scan or follicular monitoring. This involves a series of scans to ascertain when the mature egg will be released and the uterine walls will thicken.</p>
-                        <a href="appointment.php" class="btn btn-primary rounded-pill py-3 px-5 my-2">Bok Now</a>
+                        <a href="#" class="btn btn-primary rounded-pill py-3 px-5 my-2">Bok Now</a>
                     </div>
                 </div>
               
