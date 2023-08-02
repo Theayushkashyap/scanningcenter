@@ -21,12 +21,12 @@ if(isset($_POST['submit'])){
         if($row['user_type'] == 'admin'){
             
             $_SESSION['admin_name'] = $row['name'];
-            header('location:http://localhost:3000/adminend/admin.php ');
+            header('location:http://localhost:3000/hospital-website-template/admin.php');
 
         }elseif($row['user_type'] == 'staff'){
             
                 $_SESSION['user_name'] = $row['name'];
-                header('location:http://localhost:3000/staffpage/staffpage.php ');
+                header('location:http://localhost:3000/hospital-website-template/staff.php');
           }
         }else{
             $error[] = 'incorrect email or password!';
