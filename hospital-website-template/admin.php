@@ -37,7 +37,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="admin1.css">
+    <link rel="stylesheet" href="/hospital-website-template/css/admin1.css">
 </head>
 <body>
         <!-- Topbar Start -->
@@ -112,6 +112,6 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
     </div>
 </div>
    
-    <script src="admin1.js"></script>
+    <script src="/hospital-website-template/js/admin1.js"></script>
 </body>
 </html>
