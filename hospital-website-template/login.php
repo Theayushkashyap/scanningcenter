@@ -64,7 +64,7 @@ if(isset($_POST['submit'])){
 
     <!-- Template Stylesheet -->
     <link href="/hospital-website-template/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="/hospital-website-template/css/login.css">
 </head>
 
 <body>
