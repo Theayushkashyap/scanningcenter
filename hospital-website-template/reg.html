@@ -66,6 +66,14 @@
         .form-field {
             flex: 1;
         }
+
+        .success-message {
+            display: none;
+            color: green;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -148,7 +156,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">Make An Appointment</button>
+                <button type="submit" class="btn btn-primary w-100">Submit Now</button>
             </form>
         </div>
 
@@ -179,8 +187,8 @@
             event.preventDefault();
             setDateTime();
             // You can add code here to submit the form data to the server using AJAX
-            // For now, let's show the success message
-            showSuccessMessage();
+            // For now, let's show the success message after a short delay
+            setTimeout(showSuccessMessage, 1000);
         });
 
         function showSuccessMessage() {
