@@ -22,11 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $scanning = filter_input(INPUT_POST, "scanning", FILTER_SANITIZE_STRING);
 
     // Prepare and bind the SQL query with prepared statement
-    $sql = "INSERT INTO your_table_name (name, gender, age, phone, email, address, consulting_dr, study) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO appointments (name, gender, age, phone, email, address, consultingDr, scanning) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
 
     // Bind parameters
-    $stmt->bind_param("ssisssss", $name, $gender, $age, $phone, $email, $address, $consultingDr, $study);
+    $stmt->bind_param("ssisssss", $name, $gender, $age, $phone, $email, $address, $consultingDr, $scanning);
 
     // Execute the query
     if ($stmt->execute()) {
@@ -42,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $conn->close();
 }
 ?>
+
 
 
 <!DOCTYPE html>
