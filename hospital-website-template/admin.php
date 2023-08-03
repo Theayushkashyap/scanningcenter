@@ -90,6 +90,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                         <a href="index.html" class="nav-item nav-link">Home</a>
                     
                         <a href="../main/register.php" class="nav-item nav-link">Add New Staff</a> 
+                        <a href="Drdetails.php" class="nav-item nav-link">Dr Details</a>
                         <a href="http://localhost:3000/hospital-website-template/report.php" class="nav-item nav-link">Daily Report</a>                      
                       
                         <a href="login.php" class="nav-item nav-link">Logout</a>
