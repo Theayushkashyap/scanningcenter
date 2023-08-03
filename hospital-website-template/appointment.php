@@ -1,28 +1,49 @@
 <?php
+// Connect to MySQL database
+@include '/scanningcenter/main/config.php';
+
 $conn = mysqli_connect('localhost', 'root', '', 'scanning', 3306);
-if (isset($_POST['submit'])) {
-    $name = $_POST["name"];
-    $age = $_POST["age"];
-    $gender = $_POST["gender"];
-    $service = $_POST["service"];
-    $doctor = $_POST["doctor"];
-    $phone_no = $_POST["phone_no"];
 
-    // Step 3: Validate and sanitize form data (you can add your own validation logic here)
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-    $insert = "INSERT INTO appointments (name, age, gender, service, doctor, phone_no) VALUES ('$name', '$age', '$gender', '$service', '$doctor', '$phone_no')";
-    mysqli_query($conn, $insert);
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Sanitize and validate form data
+    $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
+    $gender = filter_input(INPUT_POST, "gender", FILTER_SANITIZE_STRING);
+    $age = filter_input(INPUT_POST, "age", FILTER_VALIDATE_INT);
+    $phone = filter_input(INPUT_POST, "phone", FILTER_SANITIZE_STRING);
+    $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+    $address = filter_input(INPUT_POST, "address", FILTER_SANITIZE_STRING);
+    $consultingDr = filter_input(INPUT_POST, "consulting_dr", FILTER_SANITIZE_STRING);
+    $scanning = filter_input(INPUT_POST, "scanning", FILTER_SANITIZE_STRING);
 
-    if (mysqli_query($conn, $insert)) {
-        echo "Appointment booked successfully.";
+    // Prepare and bind the SQL query with prepared statement
+    $sql = "INSERT INTO appointments (name, gender, age, phone, email, address, consultingDr, scanning) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+
+    // Bind parameters
+    $stmt->bind_param("ssisssss", $name, $gender, $age, $phone, $email, $address, $consultingDr, $scanning);
+
+    // Execute the query
+    if ($stmt->execute()) {
+        // Data inserted successfully
+        echo "Data inserted successfully!";
     } else {
-        echo "Error: " . $insert . "<br>" . mysqli_error($conn);
+        // Error handling
+        echo "Error: " . $stmt->error;
     }
 
-    // Step 5: Close the database connection
-    mysqli_close($conn);
+    // Close the statement and database connection
+    $stmt->close();
+    $conn->close();
 }
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -127,6 +148,7 @@ if (isset($_POST['submit'])) {
 
 
     <!-- Appointment Start -->
+    
     <div class="container-fluid bg-primary my-5 py-5">
         <div class="container py-5">
             <div class="row gx-5">
