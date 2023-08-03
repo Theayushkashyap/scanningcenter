@@ -102,7 +102,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 <div class="wrapper">
     <div class="containerr">
     <i class="fa-solid fa-users-medical"></i>
-    <span class="num" data-val="50">000</span>
+    <span class="num" data-val="5000">000</span>
     <span class="text">Number of Patients</span>
     </div>
     <div class="containerr">

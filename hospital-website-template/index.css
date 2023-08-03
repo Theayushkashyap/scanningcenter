@@ -1,6 +1,6 @@
 .wrapper{
     
-    position: absolute;
+    position: relative;
     width: 26vw;
     transform: translate(-50%, -50%);
     top: 56%;
@@ -20,7 +20,7 @@
     position: relative;
     font-size: 16px;
     border-radius: 0.5em;
-    background-color: rgb(224, 209, 209);
+    background-color: rgb(235, 243, 241);
     border-bottom: 10px solid rgb(68, 131, 202);
 }
 span.num{
@@ -42,11 +42,14 @@ span.text{
 @media screen and (max-width: 1024px) {
     .wrapper {
         width: 40vw;
+        height: 2vw;
+      
     }
     .containerr {
-        height: 26vmin;
-        width: 26vmin;
+        height: 16vmin;
+        width: 16vmin;
         font-size: 12px;
+      
 
     }
 }
@@ -55,6 +58,7 @@ span.text{
         width: 40vw;
         flex-wrap: wrap;
         gap: 10px;
+        height: 30vw;
     }
    .containerr {
     width: calc(50% - 20px);
@@ -67,6 +71,7 @@ span.text{
 @media screen and (max-width:480px) {
     .wrapper {
         gap: 15px;
+        flex-wrap: wrap;
     }
     .containerr{
         width: 100%;

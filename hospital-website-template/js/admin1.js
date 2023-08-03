@@ -1,8 +1,8 @@
 let valueDisplays = document.querySelectorAll(".num");
-let interval = 2500;
+let interval = -10000;
 
 valueDisplays.forEach((valueDisplay) => {
-    let startValue = 0;
+    let startValue = 1;
     let endValue = parseInt(valueDisplay.getAttribute("data-val"));
 let duration = Math.floor(interval / endValue);
 let counter = setInterval(function () {
