@@ -31,21 +31,35 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Execute the query
     if ($stmt->execute()) {
         // Data inserted successfully
-        echo "Data inserted successfully!";
+        $message = "Appointment successfully! Thank you for choosing Vismaya Scanning. Our team will reach out to you soon.";
     } else {
         // Error handling
-        echo "Error: " . $stmt->error;
+        $message = "Error: " . $stmt->error;
     }
 
-    // Close the statement and database connection
+    // Close the statement
     $stmt->close();
-    $conn->close();
 }
+
+// Close the database connection
+$conn->close();
+
 ?>
 
-
-
 <!DOCTYPE html>
+<!-- The rest of your HTML code goes here -->
+
+<!-- After the "Make An Appointment" form, you can add the notification message -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="alert alert-success mt-4" role="alert" id="notification" style="display: none;">
+                <?php echo $message; ?>
+            </div>
+        </div>
+    </div>
+</div>
+
 <html lang="en">
 
 <head>
@@ -204,82 +218,91 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="col-lg-6">
                     <div class="bg-white text-center rounded p-5">
                         <h1 class="mb-4">Book An Appointment</h1>
-                        <form>
-                            <div class="row g-3">
-                                <!-- First row: Name -->
-                                <div class="col-12">
-                                    <input type="text" class="form-control bg-light border-0" placeholder="Name"
-                                        style="height: 55px;">
-                                </div>
+                        <form method="post">
+    <div class="row g-3">
+        <!-- First row: Name -->
+        <div class="col-12">
+            <input type="text" name="name" class="form-control bg-light border-0" placeholder="Name" style="height: 55px;">
+        </div>
 
-                                <!-- Second row: Gender and Age -->
-                                <div class="col-6">
-                                    <select class="form-select bg-light border-0" style="height: 55px;">
-                                        <option selected>gender</option>
-                                        <option value="1">Male</option>
-                                        <option value="2">Female</option>
-                                        <option value="3">Other</option>
+        <!-- Second row: Gender and Age -->
+        <div class="col-6">
+            <select name="gender" class="form-select bg-light border-0" style="height: 55px;">
+                <option selected disabled>Select gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="col-6">
+            <input type="number" name="age" class="form-control bg-light border-0" placeholder="Age" style="height: 55px;">
+        </div>
+
+        <!-- Third row: Phone and Email -->
+        <div class="col-6">
+            <div style="display: flex;">
+                <span style="padding: 15px 10px;">+91</span>
+                <input type="text" name="phone" class="form-control bg-light border-0" placeholder="Phone no" style="height: 55px;">
+            </div>
+        </div>
+        <div class="col-6">
+            <input type="email" name="email" class="form-control bg-light border-0" placeholder="Email" style="height: 55px;">
+        </div>
+
+        <!-- Fourth row: Address -->
+        <div class="col-12">
+            <input type="text" name="address" class="form-control bg-light border-0" placeholder="Address" style="height: 55px;">
+        </div>
+
+        <!-- Fifth row: Consulting Dr and Study -->
+        <div class="col-6">
+            <input type="text" name="consulting_dr" class="form-control bg-light border-0" placeholder="Consulting Dr." style="height: 55px;">
+        </div>
+        <div class="col-6">
+            <select name="scanning" class="form-select bg-light border-0" style="height: 55px;">
+                <option selected disabled>Select scanning</option>
+                <option value="Abdominopelvic Scan">Abdominopelvic Scan</option>
+                <option value="Abdominopelvic + Scrotal Scan">Abdominopelvic + Scrotal Scan</option>
+                <option value="3">Obstetric Anomaly Scan</option>
+                                        <option value="Obstetric Growth Scan">Obstetric Growth Scan</option>
+                                        <option value="Obstetric Doppler / Fecal Echo Scan">Obstetric Doppler / Fecal Echo Scan</option>
+                                        <option value="Early Pregnancy(Dating)">Early Pregnancy(Dating)</option>
+                                        <option value="Early Pregnancy(NT/NB)">Early Pregnancy(NT/NB)</option>
+                                        <option value="Lower/ Upper Limb Doppler">Lower/ Upper Limb Doppler</option>
+                                        <option value="Renal Doppler">Renal Doppler</option>
+                                        <option value="Scrotal Doppler">Scrotal Doppler</option>
+                                        <option value="Follicular Study">Follicular Study</option>
+                                        <option value="Penile Scan">Penile Scan</option>
+                                        <option value="MSK(Thyroid / Breast / Small Parts)">MSK(Thyroid / Breast / Small Parts)</option>
+                                        <option value="TV Scan">TV Scan</option>
                                     </select>
-                                </div>
-                                <div class="col-6">
-                                    <input type="number" class="form-control bg-light border-0" placeholder="age"
-                                        style="height: 55px;">
-                                </div>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary w-100 py-3" type="submit">Make An Appointment</button>
+        </div>
+    </div>
+</form>
 
-                                <!-- Third row: Phone and Email -->
-                                <div class="col-6">
-                                    <div style="display: flex;">
-                                        <span style="padding: 15px 10px;">+91</span>
-                                        <input type="number" class="form-control bg-light border-0"
-                                            placeholder="phone no" style="height: 55px;">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <input type="email" class="form-control bg-light border-0" placeholder="email"
-                                        style="height: 55px;">
-                                </div>
-
-                                <!-- Fourth row: Address -->
-                                <div class="col-12">
-                                    <input type="text" class="form-control bg-light border-0" placeholder="address"
-                                        style="height: 55px;">
-                                </div>
-
-                                <!-- Fifth row: Consulting Dr and Study -->
-                                <div class="col-6">
-                                    <input type="text" class="form-control bg-light border-0"
-                                        placeholder="consulting Dr." style="height: 55px;">
-                                </div>
-                                <div class="col-6">
-                                    <select class="form-select bg-light border-0" style="height: 55px;">
-                                        <option selected>scanning</option>
-                                        <option value="1">Abdominopelvie Scan</option>
-                                        <option value="2">Abdominopelvie + Scrotal Scan</option>
-                                        <option value="3">Obstetric Anomaly Scan</option>
-                                        <option value="3">Obstetric Growth Scan</option>
-                                        <option value="3">Obstetric Doppler / Fecal Echo Scan</option>
-                                        <option value="3">Early Pregnancy(Dating)</option>
-                                        <option value="3">Early Pregnancy(NT/NB)</option>
-                                        <option value="3">Lower/ Upper Limb Doppler</option>
-                                        <option value="3">Renal Doppler</option>
-                                        <option value="3">Scrotal Doppler</option>
-                                        <option value="3">Follicular Study</option>
-                                        <option value="3">Penile Scan</option>
-                                        <option value="3">MSK(Thyroid / Breast / Small Parts)</option>
-                                        <option value="3">TV Scan</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Make An
-                                        Appointment</button>
-                                </div>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Check if the PHP message variable is set
+        <?php if (isset($message)) : ?>
+            // Display the notification
+            alert("<?php echo $message; ?>");
+        <?php endif; ?>
+    });
+</script>
+
+
+
+
     <!-- Appointment End -->
 
 
