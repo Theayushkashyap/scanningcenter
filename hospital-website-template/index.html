@@ -100,25 +100,58 @@
             <div class="row justify-content-start">
                 <div class="col-lg-8 text-center text-lg-start">
                     <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5" style="border-color: rgba(256, 256, 256, .3) !important;">Welcome To Vismaya Scanning & X-Ray Center</h5>
-                    <h1 class="display-1 text-white mb-md-4">Best Healthcare Solution In Tiptur 
-                        <p class="num" data-val="15000">000</p>
+                    <h1 class="display-1 text-white mb-md-4">Best Healthcare Solution In Tiptur
+                        <p class="num" data-val="15000">1000+</p>
                         <p class="text">Number of Patients</p>
-                       <p class="num" data-val="10">000</p>
+                        <p class="num" data-val="10">000</p>
                         <p class="text">Number of Staff</p>
-                        
-                        <script src="/hospital-website-template/js/admin1.js"></script>
-                    
                     </h1>
-                    <div class="pt-2">
-                        <a href="appointment.php" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Appointment</a>
-                    </div>
-                    
+    
+                    <script src="/hospital-website-template/js/admin1.js"></script>
+    
+                    <script>
+                        let valueDisplays = document.querySelectorAll(".num");
+                        let patientValueDisplay = valueDisplays[0]; // Selecting the element for the number of patients
+                        let staffValueDisplay = valueDisplays[1]; // Selecting the element for the number of staff
+                        let interval = -10000;
+    
+                        // Adjust the duration to increase or decrease the speed of the counters.
+                        let patientDuration = 10; // Change this value to adjust the speed of patient counter.
+                        let staffDuration = 95; // Change this value to slow down the staff counter.
+    
+                        let startPatientValue = 1000;
+                        let endPatientValue = parseInt(patientValueDisplay.getAttribute("data-val"));
+    
+                        let startStaffValue = 0;
+                        let endStaffValue = parseInt(staffValueDisplay.getAttribute("data-val"));
+    
+                        function updatePatientCounter() {
+                            startPatientValue += Math.ceil((endPatientValue - startPatientValue) / patientDuration);
+                            patientValueDisplay.textContent = (startPatientValue < endPatientValue ? startPatientValue : endPatientValue) + "+";
+                            if (startPatientValue < endPatientValue) {
+                                requestAnimationFrame(updatePatientCounter);
+                            }
+                        }
+    
+                        function updateStaffCounter() {
+                            startStaffValue += Math.ceil((endStaffValue - startStaffValue) / staffDuration);
+                            staffValueDisplay.textContent = (startStaffValue < endStaffValue ? startStaffValue : endStaffValue);
+                            if (startStaffValue < endStaffValue) {
+                                requestAnimationFrame(updateStaffCounter);
+                            }
+                        }
+    
+                        updatePatientCounter();
+                        updateStaffCounter();
+                    </script>
                 </div>
-               
+                <div class="pt-2">
+                    <a href="appointment.php" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Appointment</a>
+                </div>
             </div>
-           
         </div>
     </div>
+    
     <!-- Hero End -->
 
 
