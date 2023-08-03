@@ -230,10 +230,21 @@ if (isset($_POST['submit'])) {
                                 </div>
                                 <div class="col-6">
                                     <select class="form-select bg-light border-0" style="height: 55px;">
-                                        <option selected>study</option>
-                                        <option value="1">Study 1</option>
-                                        <option value="2">Study 2</option>
-                                        <option value="3">Study 3</option>
+                                        <option selected>scanning</option>
+                                        <option value="1">Abdominopelvie Scan</option>
+                                        <option value="2">Abdominopelvie + Scrotal Scan</option>
+                                        <option value="3">Obstetric Anomaly Scan</option>
+                                        <option value="3">Obstetric Growth Scan</option>
+                                        <option value="3">Obstetric Doppler / Fecal Echo Scan</option>
+                                        <option value="3">Early Pregnancy(Dating)</option>
+                                        <option value="3">Early Pregnancy(NT/NB)</option>
+                                        <option value="3">Lower/ Upper Limb Doppler</option>
+                                        <option value="3">Renal Doppler</option>
+                                        <option value="3">Scrotal Doppler</option>
+                                        <option value="3">Follicular Study</option>
+                                        <option value="3">Penile Scan</option>
+                                        <option value="3">MSK(Thyroid / Breast / Small Parts)</option>
+                                        <option value="3">TV Scan</option>
                                     </select>
                                 </div>
                                 <div class="col-12">
