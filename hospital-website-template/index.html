@@ -282,112 +282,139 @@
 
 
 
-    <!-- Appointment Start -->
- <div class="container-fluid bg-primary my-5 py-5">
-    <div class="container py-5">
-        <div class="row gx-5">
-            <div class="col-lg-6 mb-5 mb-lg-0">
-                <div class="mb-4">
-                    <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">Appointment</h5>
-                    <h1 class="display-4">Make An Appointment For Your Family</h1>
-                </div>
-                <p class="text-white mb-5">Our dedicated team of healthcare professionals is here to 
-                    provide top-quality care and support for your loved ones. To
-                    schedule an appointment for your family, simply fill out the 
-                    appointment request form.
-                    
-                    </p>
-                    <style>
-                        /* Hide the details element by default */
-                        details {
-                          display: none;
-                        }
-                      
-                        /* When the input is checked, display the details element */
-                        input:checked + details {
-                          display: block;
-                        }
-                      
-                        /* Style the "Read More" button */
-                        .btn-container {
-                          display: inline-block;
-                          cursor: pointer;
-                          padding: 10px;
-                          border: 1px solid #ffffff;
-                          border-radius: 5px;
-                        }
-                      </style>
-                      
-                      <!-- Wrap the input and details elements with a label -->
-                      <label for="details-toggle" class="btn-container" style="color: #ffffff;">
-                        Read More
-                        <input type="checkbox" id="details-toggle" style="display: none;">
-                        <details>
-                          <summary>
-                            Please provide your contact information and preferred dates,
-                            and we will do our best to accommodate your schedule.
-                            Our staff will get in touch with you shortly to confirm the
-                            appointment and answer any questions you may have.
-                            Thank you for choosing us as your healthcare partner.
-                            We look forward to serving you and your family's medical needs.
-                          </summary>
-                        </details>
-                      </label>
-                      
-            </div>
-            <div class="col-lg-6">
-                <div class="bg-white text-center rounded p-5">
-                    <h1 class="mb-4">Book An Appointment</h1>
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-12 col-sm-6">
-                                <select class="form-select bg-light border-0" style="height: 55px;">
-                                    <option selected>Choose Department</option>
-                                    <option value="1">Department 1</option>
-                                    <option value="2">Department 2</option>
-                                    <option value="3">Department 3</option>
-                                </select>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <select class="form-select bg-light border-0" style="height: 55px;">
-                                    <option selected>Select Doctor</option>
-                                    <option value="1">Doctor 1</option>
-                                    <option value="2">Doctor 2</option>
-                                    <option value="3">Doctor 3</option>
-                                </select>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <div class="date" id="date" data-target-input="nearest">
-                                    <input type="text"
-                                        class="form-control bg-light border-0 datetimepicker-input"
-                                        placeholder="Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <div class="time" id="time" data-target-input="nearest">
-                                    <input type="text"
-                                        class="form-control bg-light border-0 datetimepicker-input"
-                                        placeholder="Time" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Make An Appointment</button>
-                            </div>
+        <!-- Appointment Start -->
+        <div class="container-fluid bg-primary my-5 py-5">
+            <div class="container py-5">
+                <div class="row gx-5">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <div class="mb-4">
+                            <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">Appointment</h5>
+                            <h1 class="display-4">Make An Appointment For Your Family</h1>
                         </div>
-                    </form>
+                        <p class="text-white mb-5">Our dedicated team of healthcare professionals is here to
+                            provide top-quality care and support for your loved ones. To
+                            schedule an appointment for your family, simply fill out the
+                            appointment request form.
+    
+                        </p>
+                        <style>
+                            /* Hide the details element by default */
+                            details {
+                                display: none;
+                            }
+    
+                            /* When the input is checked, display the details element */
+                            input:checked+details {
+                                display: block;
+                            }
+    
+                            /* Style the "Read More" button */
+                            .btn-container {
+                                display: inline-block;
+                                cursor: pointer;
+                                padding: 10px;
+                                border: 1px solid #ffffff;
+                                border-radius: 5px;
+                            }
+                        </style>
+    
+                        <!-- Wrap the input and details elements with a label -->
+                        <label for="details-toggle" class="btn-container" style="color: #ffffff;">
+                            Read More
+                            <input type="checkbox" id="details-toggle" style="display: none;">
+                            <details>
+                                <summary>
+                                    Please provide your contact information and preferred dates,
+                                    and we will do our best to accommodate your schedule.
+                                    Our staff will get in touch with you shortly to confirm the
+                                    appointment and answer any questions you may have.
+                                    Thank you for choosing us as your healthcare partner.
+                                    We look forward to serving you and your family's medical needs.
+                                </summary>
+                            </details>
+                        </label>
+    
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bg-white text-center rounded p-5">
+                            <h1 class="mb-4">Book An Appointment</h1>
+                            <form>
+                                <div class="row g-3">
+                                    <!-- First row: Name -->
+                                    <div class="col-12">
+                                        <input type="text" class="form-control bg-light border-0" placeholder="Name"
+                                            style="height: 55px;">
+                                    </div>
+    
+                                    <!-- Second row: Gender and Age -->
+                                    <div class="col-6">
+                                        <select class="form-select bg-light border-0" style="height: 55px;">
+                                            <option selected>gender</option>
+                                            <option value="1">Male</option>
+                                            <option value="2">Female</option>
+                                            <option value="3">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="number" class="form-control bg-light border-0" placeholder="age"
+                                            style="height: 55px;">
+                                    </div>
+    
+                                    <!-- Third row: Phone and Email -->
+                                    <div class="col-6">
+                                        <div style="display: flex;">
+                                            <span style="padding: 15px 10px;">+91</span>
+                                            <input type="number" class="form-control bg-light border-0"
+                                                placeholder="phone no" style="height: 55px;">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="email" class="form-control bg-light border-0" placeholder="email"
+                                            style="height: 55px;">
+                                    </div>
+    
+                                    <!-- Fourth row: Address -->
+                                    <div class="col-12">
+                                        <input type="text" class="form-control bg-light border-0" placeholder="address"
+                                            style="height: 55px;">
+                                    </div>
+    
+                                    <!-- Fifth row: Consulting Dr and Study -->
+                                    <div class="col-6">
+                                        <input type="text" class="form-control bg-light border-0"
+                                            placeholder="consulting Dr." style="height: 55px;">
+                                    </div>
+                                    <div class="col-6">
+                                        <select class="form-select bg-light border-0" style="height: 55px;">
+                                            <option selected>scanning</option>
+                                            <option value="1">Abdominopelvie Scan</option>
+                                            <option value="2">Abdominopelvie + Scrotal Scan</option>
+                                            <option value="3">Obstetric Anomaly Scan</option>
+                                            <option value="3">Obstetric Growth Scan</option>
+                                            <option value="3">Obstetric Doppler / Fecal Echo Scan</option>
+                                            <option value="3">Early Pregnancy(Dating)</option>
+                                            <option value="3">Early Pregnancy(NT/NB)</option>
+                                            <option value="3">Lower/ Upper Limb Doppler</option>
+                                            <option value="3">Renal Doppler</option>
+                                            <option value="3">Scrotal Doppler</option>
+                                            <option value="3">Follicular Study</option>
+                                            <option value="3">Penile Scan</option>
+                                            <option value="3">MSK(Thyroid / Breast / Small Parts)</option>
+                                            <option value="3">TV Scan</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" type="submit">Make An
+                                            Appointment</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- Appointment End -->
-
+        <!-- Appointment End -->
 
     <!-- Team Start -->
     <div class="container-fluid py-5">
