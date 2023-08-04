@@ -1,3 +1,38 @@
+<?php
+include("connection.php");
+
+if (isset($_POST['submit'])) {
+    $id = $_POST["id"];
+    $name = $_POST["name"];
+    $gender = $_POST["gender"];
+    $age = $_POST["age"];
+    $phone = $_POST["phone"];
+    $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) ? $_POST["email"] : '';
+    $address = $_POST["address"];
+    $consulting_dr = $_POST["consulting_dr"];
+    $scanning = $_POST["scanning"];
+    $aadhar_no = $_POST["aadhar_no"];
+    $entry_date = $_POST["entry_date"];
+    $entry_time = $_POST["entry_time"];
+
+    $query = "INSERT INTO scanning.patient_registration (id, name, gender, age, phone, email, address, consulting_dr, scanning, aadhar_no, entry_date, entry_time)
+              VALUES ('$id', '$name', '$gender', '$age', '$phone', '$email', '$address', '$consulting_dr', '$scanning', '$aadhar_no', '$entry_date', '$entry_time')";
+    
+    $data = mysqli_query($conn, $query);
+    
+    if ($data) {
+        echo "Data Inserted into Database";
+        header("Location: http://localhost:3000/staffpage/staffpage.php"); // Redirect to the desired page after successful submission
+        exit;
+    } else {
+        echo "Failed";
+    }
+}
+?>
+
+<!-- Rest of your HTML and JavaScript code remains unchanged -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,6 +117,10 @@
             <h2 class="mb-4">Patient Registration Form</h2>
             <form id="patientForm" method="post" action="process_form.php">
                 <div class="form-group">
+                    <label for="id" class="form-label">Id</label>
+                    <input type="number" name="id" id="id" class="form-control" placeholder="id" required>
+                </div>
+                <div class="form-group">
                     <label for="name" class="form-label">Name:</label>
                     <input type="text" name="name" id="name" class="form-control" placeholder="Name" required>
                 </div>
@@ -156,7 +195,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">Submit Now</button>
+                <button type="submit" name="submit" value="submit" class="btn btn-primary w-100">Submit Now</button>
             </form>
         </div>
 
