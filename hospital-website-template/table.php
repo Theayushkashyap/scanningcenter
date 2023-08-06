@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Today's Registered Patients</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Additional CSS styles */
         body {
@@ -52,6 +53,56 @@
             vertical-align: middle;
         }
 
+        .table th {
+            cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .table th.sorted-asc::after {
+            content: " ▲";
+        }
+
+        .table th.sorted-desc::after {
+            content: " ▼";
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .action-button {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .action-button.update {
+            background-color: #007bff;
+        }
+
+        .action-button.report {
+            background-color: #28a745;
+        }
+
+        .action-button.bill {
+            background-color: #ffc107;
+        }
+
+        .action-button.print {
+            background-color: #17a2b8;
+        }
+
+        .action-button i {
+            margin-right: 5px;
+        }
+
         @media screen and (max-width: 576px) {
             .container {
                 padding: 10px;
@@ -75,18 +126,19 @@
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th>Reg No</th>
-                        <th>Name</th>
-                        <th>Gender</th>
-                        <th>Age</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>Consulting Dr</th>
-                        <th>Scanning</th>
-                        <th>Aadhar No</th>
-                        <th>Entry Date</th>
-                        <th>Entry Time</th>
+                        <th onclick="sortData(0)">Reg No</th>
+                        <th onclick="sortData(1)">Name</th>
+                        <th onclick="sortData(2)">Gender</th>
+                        <th onclick="sortData(3)">Age</th>
+                        <th onclick="sortData(4)">Phone</th>
+                        <th onclick="sortData(5)">Email</th>
+                        <th onclick="sortData(6)">Address</th>
+                        <th onclick="sortData(7)">Consulting Dr</th>
+                        <th onclick="sortData(8)">Scanning</th>
+                        <th onclick="sortData(9)">Aadhar No</th>
+                        <th onclick="sortData(10)">Entry Date</th>
+                        <th onclick="sortData(11)">Entry Time</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
@@ -125,15 +177,54 @@
                     <td>${patient.aadhar_no}</td>
                     <td>${patient.entry_date}</td>
                     <td>${patient.entry_time}</td>
+                    <td class="action-buttons">
+                        <div class="action-button update" onclick="handleAction('update', ${patient.regNo})">
+                            <i class="fas fa-edit"></i> Update
+                        </div>
+                        <div class="action-button report" onclick="handleAction('report', ${patient.regNo}, '${patient.scanning}')">
+                            <i class="fas fa-file-alt"></i> Report
+                        </div>
+                        <div class="action-button bill" onclick="handleAction('bill', ${patient.regNo})">
+                            <i class="fas fa-file-invoice-dollar"></i> Bill
+                        </div>
+                        <div class="action-button print" onclick="handleAction('print', ${patient.regNo})">
+                            <i class="fas fa-print"></i> Print
+                        </div>
+                    </td>
                 `;
                 tableBody.appendChild(newRow);
             });
         }
 
-        // Call the fetchData function to initialize the table
-        fetchData();
+        // Function to handle action buttons
+        function handleAction(action, regNo, scanning) {
+            // Replace this with the actual functionality for each action
+            switch (action) {
+                case "update":
+                    console.log(`Update action for Reg No ${regNo}`);
+                    break;
+                case "report":
+                    console.log(`Report action for Reg No ${regNo}, Scanning: ${scanning}`);
+                    break;
+                case "bill":
+                    console.log(`Bill action for Reg No ${regNo}`);
+                    break;
+                case "print":
+                    console.log(`Print action for Reg No ${regNo}`);
+                    break;
+                default:
+                    console.log(`Unknown action: ${action}`);
+                    break;
+            }
+        }
 
-        // ... (search and sort functions) ...
+        // Function to sort the table by column index
+        function sortData(columnIndex) {
+            // ... (existing sortData() function) ...
+        }
+
+        // Attach the fetchData function to initialize the table
+        fetchData();
 
     </script>
 </body>
