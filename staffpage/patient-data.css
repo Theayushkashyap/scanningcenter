@@ -1,172 +1,139 @@
-* {
+/* Global styles for the body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
-.hero {
-  width: 100%;
-  min-height: 100vh;
-}
-
-body {
-  background-color: lightblue;
-  padding: 0 10px;
-}
-
+/* Styles for the container that holds the form */
 .container {
-  align-self: center;
-  max-width: 500px;
-  width: 100%;
-  margin: 40px auto;
-  padding: 30px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  position: relative;
-  overflow: hidden;
-  background-color: white;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.container .title {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 25px;
-  color: #d071f9;
-  text-transform: uppercase;
-  text-align: center;
+/* Styles for the entire form */
+.form {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.container .form {
-  width: 100%;
-}
-
-.container .form .input-field {
-  margin-bottom: 25px;
+/* Styles for each row in the form */
+.form-row {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.container .form .input-field label {
-  width: 200px;
-  margin-right: 10px;
-  font-size: 18px;
-}
-
-.container .form .input-field .input,
-.container .form .input-field .textarea {
-  width: 100%;
-  outline: none;
-  border: 2px solid #d071f9;
-  font-size: 16px;
-  padding: 8px 10px;
-  border-radius: 3px;
-  transition: all 0.5s ease;
-}
-
-.container .form .input-field .textarea {
-  resize: none;
-  height: 70px;
-}
-
-.container .form .input-field .custom_select {
-  position: relative;
-  width: 100%;
-  height: 37px;
-}
-
-.container .form .input-field .custom_select select {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 100%;
-  padding: 8px 10px;
-  border: 2px solid #d071f9;
-  border-radius: 3px;
-  outline: none;
-}
-
-.container .form .input-field .custom_select:before {
-  content: "";
-  position: absolute;
-  top: 12px;
-  right: 10px;
-  border: 8px solid black;
-  border-color: #d071f9 transparent transparent transparent;
-  pointer-events: none;
-}
-
-.container .form .input-field .input:focus,
-.container .form .input-field .textarea:focus,
-.container .form .input-field select:focus {
-  border: 2px solid purple;
-}
-
-.container .form .input-field .btn{
-  width: 100%;
-  padding: 8px 10px;
-  font-size: 20px;
-  border: 0;
-  background: #d071f9;
-  color: white;
-  cursor: pointer;
-  border-radius: 3px;
-  outline: none;
-}
-
-.container .form .input-field:last-child {
-  margin-bottom: 0px;
-}
-
-.container .form .input-field .btn:hover {
-  background: purple;
-}
-.container .form .input-field .second
-{
-  width: 100%;
-  padding: 5px 10px;
-  margin-left: 350px;
-  font-size: 18px;
-  border: 0;
-  background: #9f1212;
-  color: white;
-  cursor: pointer;
-  border-radius: 3px;
-  outline: none;
-  margin-bottom: -10px;
-}
-
-
-@media (max-width: 420px) {
-  .container .form .input-field {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .container .form .input-field label {
-    margin-bottom: 5px;
-  }
-}
-
-.plus-button {
-  font-size: 30px;
-  padding: 8px 12px;
-  background-color: transparent;
-  border: none;
-  color: black;
-  cursor: pointer;
-  border-radius: 50px;
-  margin: 0;
   align-items: center;
-  border-radius: 50%;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  margin-bottom: 20px;
 }
 
-/* hover effect */
-.plus-button:hover {
-  transform: translateY(5px);
-  background-color: lightblue; /* change this value to adjust the background color when the button is hovered over */
+/* Styles for each input field and label */
+.input-field {
+  flex-basis: 48%; /* Each field takes up 48% of the row width */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Styles for the label within each input field */
+.input-field label {
+  margin-bottom: 5px;
+}
+
+/* Styles for the text input fields */
+.input {
+  height: 45px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+/* Styles for the custom select dropdown */
+.custom_select select {
+  height: 45px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+/* Styles for the "Register" button */
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  height: 45px;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Styles for the form title */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Additional CSS to make gender and age fields smaller */
+.input-field.small {
+  flex-basis: calc(50% - 10px); /* Each small field takes up 50% of the row width with 10px spacing */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .form-row {
+      flex-wrap: wrap; /* For smaller screens, wrap the fields to a new line */
+  }
+
+  .input-field {
+      flex-basis: 100%; /* Each field takes up 100% of the row width on smaller screens */
+  }
+}
+
+/* Separate CSS for Name input field */
+.input-field.name {
+  flex-basis: 100%; /* Name field takes up 100% of the row width */
+}
+
+/* Separate CSS for Gender input field */
+.input-field.gender {
+  flex-basis: calc(50% - 10px); /* Gender field takes up 50% of the row width with 10px spacing */
+}
+
+/* Separate CSS for Age input field */
+.input-field.age {
+  flex-basis: calc(50% - 10px); /* Age field takes up 50% of the row width with 10px spacing */
+}
+
+/* Separate CSS for Study Description input field */
+.input-field.sdescription {
+  flex-basis: 100%; /* Study Description field takes up 100% of the row width */
+}
+
+.input-field.sdescription select {
+  margin: 0 auto;
+}
+/* Separate CSS for Contact No input field */
+.input-field.contactno {
+  flex-basis: calc(50% - 10px); /* Contact No field takes up 50% of the row width with 10px spacing */
+}
+
+/* Separate CSS for Referral Doctor input field */
+.input-field.referraldoctor {
+  flex-basis: calc(50% - 10px); /* Referral Doctor field takes up 50% of the row width with 10px spacing */
 }

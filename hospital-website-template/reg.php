@@ -1,3 +1,5 @@
+<?php include("c.php"); ?>
+<?php error_reporting(0); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,7 +82,7 @@
     <div class="container mt-5">
         <div class="form-box">
             <h2 class="mb-4">Patient Registration Form</h2>
-            <form id="patientForm" method="post" action="process_form.php">
+        
                 <div class="form-group">
                     <label for="id" class="form-label">Id</label>
                     <input type="number" name="id" id="id" class="form-control" placeholder="id" required>
@@ -245,3 +247,29 @@
     
 </body>
 </html>
+<?php
+if($_POST['register'])
+{
+   $pid   = $_POST['pid'];
+   $pname = $_POST['pname'];
+   $age   = $_POST['age'];
+   $gen   = $_POST['gender'];
+   $sdesc = $_POST['sdescription'];
+   $cno   = $_POST['contactno'];
+   $rdoc  = $_POST['referraldoctor'];
+
+   $query = "INSERT INTO all_patient_data (patient_id,patient_name,age,gender,study_description,contact_no,referral_doctor) VALUES('$pid','$pname','$age','$gen','$sdesc','$cno','$rdoc')";
+   $data = mysqli_query($conn,$query);
+   if($data)
+   {
+    echo "Data  Inserated into Database";
+    ?>
+    <meta http-equiv= "refresh" content = "0; url = http://localhost:3000/staffpage/staffpage.php" /> 
+    <?php
+   }
+   else
+   {
+    echo "Failed";
+}
+}
+?>
