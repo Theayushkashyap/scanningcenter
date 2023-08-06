@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML/CSS Text Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #editor {
+            width: 100%;
+            height: 400px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="editor"></textarea>
+
+    <script>
+        const editor = document.getElementById('editor');
+
+        // Function to update the syntax highlighting
+        function updateSyntaxHighlighting() {
+            const code = editor.value;
+            const highlightedCode = code
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/("[^"]*")/g, '<span class="string">$1</span>')
+                .replace(/('[^']*')/g, '<span class="string">$1</span>')
+                .replace(/(\/\/[^\n]*)/g, '<span class="comment">$1</span>')
+                .replace(/(\/\*[\s\S]*?\*\/)/g, '<span class="comment">$1</span>')
+                .replace(/(\b(?:function|if|else|while|for|do|switch|case|break|continue|var|const|let|return)\b)/g, '<span class="keyword">$1</span>')
+                .replace(/(\b(?:html|head|body|div|span|a|p|h\d|ul|ol|li|img|link|script|style|title)\b)/g, '<span class="tag">$1</span>')
+                .replace(/(\b(?:id|class|src|href|style)\b)/g, '<span class="attribute">$1</span>');
+
+            editor.innerHTML = highlightedCode;
+        }
+
+        // Event listener for keyup to update syntax highlighting
+        editor.addEventListener('keyup', () => {
+            updateSyntaxHighlighting();
+        });
+
+        // Initial syntax highlighting
+        updateSyntaxHighlighting();
+    </script>
+</body>
+</html>

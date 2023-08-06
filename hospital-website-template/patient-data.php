@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Register Form</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         /* CSS styles for the form */
         body {
@@ -79,12 +79,15 @@
         }
     </style>
 </head>
-
 <body>
     <div class="container mt-5">
         <div class="form-box">
             <h2 class="mb-4">Patient Registration Form</h2>
             <form id="patientForm" method="post" action="process_form.php">
+                <div class="form-group">
+                    <label for="id" class="form-label">Id</label>
+                    <input type="number" name="id" id="id" class="form-control" placeholder="id" required>
+                </div>
                 <div class="form-group">
                     <label for="name" class="form-label">Name:</label>
                     <input type="text" name="name" id="name" class="form-control" placeholder="Name" required>
@@ -160,7 +163,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">Submit Now</button>
+                <button type="submit" name="submit" value="submit" class="btn btn-primary w-100">Submit Now</button>
             </form>
         </div>
 
@@ -245,30 +248,35 @@
     
 </body>
 </html>
-
 <?php
-if($_POST['register'])
-{
-   $pid   = $_POST['pid'];
-   $pname = $_POST['pname'];
-   $age   = $_POST['age'];
-   $gen   = $_POST['gender'];
-   $sdesc = $_POST['sdescription'];
-   $cno   = $_POST['contactno'];
-   $rdoc  = $_POST['referraldoctor'];
+if ($_POST['submit']) {
+    // Extract data from the form
+    $id = $_POST["id"];
+    $name = $_POST["name"];
+    $age = $_POST["age"];
+    $gender = $_POST["gender"];
+    $contact_no = $_POST["phone"];
+    $email = $_POST["email"];
+    $address = $_POST["address"];
+    $consulting_dr = $_POST["consulting_dr"];
+    $scanning = $_POST["scanning"];
+    $aadhar_no = $_POST["aadhar_no"];
+    $entry_date = $_POST["entry_date"];
+    $entry_time = $_POST["entry_time"];
 
-   $query = "INSERT INTO scanning.patient_form (patient_id,patient_name,age,gender,study_description,contact_no,referral_doctor) VALUES('$pid','$pname','$age','$gen','$sdesc','$cno','$rdoc')";
-   $data = mysqli_query($conn,$query);
-   if($data)
-   {
-    echo "Data  Inserated into Database";
-    ?>
-    <meta http-equiv= "refresh" content = "0; url = http://localhost:3000/staffpage/staffpage.php" /> 
-    <?php
-   }
-   else
-   {
-    echo "Failed";
-   }
+    // Insert data into the database
+    $query = "INSERT INTO scanning.all_patient_data (patient_id, patient_name, age, gender, contact_no, email, address, consulting_dr, study_description, aadhar_no, entry_date, entry_time) VALUES ('$id', '$name', '$age', '$gender', '$contact_no', '$email', '$address', '$consulting_dr', '$scanning', '$aadhar_no', '$entry_date', '$entry_time')";
+
+    // Assuming $conn is the database connection variable, execute the query
+    $data = mysqli_query($conn, $query);
+
+    if ($data) {
+        echo "Data inserted into the database";
+        ?>
+        <meta http-equiv="refresh" content="0; url=http://localhost:3000/staffpage/staffpage.php" />
+        <?php
+    } else {
+        echo "Failed to insert data";
+    }
 }
 ?> 
