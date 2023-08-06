@@ -90,6 +90,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
                         <a href="index.html" class="nav-item nav-link">Home</a>
                     
                         <a href="../main/register.php" class="nav-item nav-link">Add New Staff</a> 
+                        <a href="Drdetails.php" class="nav-item nav-link">Dr Details</a>
                         <a href="http://localhost:3000/hospital-website-template/report.php" class="nav-item nav-link">Daily Report</a>                      
                       
                         <a href="login.php" class="nav-item nav-link">Logout</a>
@@ -102,16 +103,51 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 <div class="wrapper">
     <div class="containerr">
     <i class="fa-solid fa-users-medical"></i>
-    <span class="num" data-val="5000">000</span>
-    <span class="text">Number of Patients</span>
+    <span class="num" data-val="15000">1000+</span>
+    <span class="text">Patients</span>
     </div>
     <div class="containerr">
     <i class="fa-solid fa-users-medical"></i>
     <span class="num" data-val="10">000</span>
-    <span class="text">Number of Staff</span>
+    <span class="text">Staffs</span>
     </div>
 </div>
    
     <script src="/hospital-website-template/js/admin1.js"></script>
+    <script>
+                        let valueDisplays = document.querySelectorAll(".num");
+                        let patientValueDisplay = valueDisplays[0]; // Selecting the element for the number of patients
+                        let staffValueDisplay = valueDisplays[1]; // Selecting the element for the number of staff
+                        let interval = -10000;
+    
+                        // Adjust the duration to increase or decrease the speed of the counters.
+                        let patientDuration = 10; // Change this value to adjust the speed of patient counter.
+                        let staffDuration = 95; // Change this value to slow down the staff counter.
+    
+                        let startPatientValue = 1000;
+                        let endPatientValue = parseInt(patientValueDisplay.getAttribute("data-val"));
+    
+                        let startStaffValue = 0;
+                        let endStaffValue = parseInt(staffValueDisplay.getAttribute("data-val"));
+    
+                        function updatePatientCounter() {
+                            startPatientValue += Math.ceil((endPatientValue - startPatientValue) / patientDuration);
+                            patientValueDisplay.textContent = (startPatientValue < endPatientValue ? startPatientValue : endPatientValue) + "+";
+                            if (startPatientValue < endPatientValue) {
+                                requestAnimationFrame(updatePatientCounter);
+                            }
+                        }
+    
+                        function updateStaffCounter() {
+                            startStaffValue += Math.ceil((endStaffValue - startStaffValue) / staffDuration);
+                            staffValueDisplay.textContent = (startStaffValue < endStaffValue ? startStaffValue : endStaffValue);
+                            if (startStaffValue < endStaffValue) {
+                                requestAnimationFrame(updateStaffCounter);
+                            }
+                        }
+    
+                        updatePatientCounter();
+                        updateStaffCounter();
+                    </script>
 </body>
 </html>

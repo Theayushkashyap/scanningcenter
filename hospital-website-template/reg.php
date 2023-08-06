@@ -1,61 +1,3 @@
-<?php
-@include '/hospital-website-template/config.php';
-@include 'config.php';
-if (isset($_POST['Submit Now'])) {
-    // Get the form data
-    $name = $_POST["name"];
-    $age = $_POST["age"];
-    $gender = $_POST["gender"];
-    $contact_no = $_POST["phone"];
-    $study_description = $_POST["scanning"];
-    $referral_doctor = $_POST["consulting_dr"];
-    $aadhar_no = $_POST["aadhar_no"];
-    $entry_date = $_POST["entry_date"];
-    $entry_time = $_POST["entry_time"];
-
-    // Connect to the database (update with your database credentials)
-    $host = "your_host";
-    $username = "your_username";
-    $password = "your_password";
-    $database = "scanning";
-
-    $conn = mysqli_connect($host, $username, $password, $database);
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-
-    // Prepare the SQL query with prepared statement
-    $sql = "INSERT INTO all_patient_data (patient_name, age, gender, contact_no, study_description, referral_doctor, aadhar_no, date, time)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-    // Create a prepared statement
-    $stmt = mysqli_stmt_init($conn);
-    if (mysqli_stmt_prepare($stmt, $sql)) {
-        // Bind the parameters to the prepared statement
-        mysqli_stmt_bind_param($stmt, "sisssssss", $name, $age, $gender, $contact_no, $study_description, $referral_doctor, $aadhar_no, $entry_date, $entry_time);
-
-        // Execute the prepared statement
-        if (mysqli_stmt_execute($stmt)) {
-            // Data successfully inserted, show the confirmation message
-            echo "Patient has been registered successfully!";
-        } else {
-            // Error while inserting data
-            echo "Error: " . mysqli_stmt_error($stmt);
-        }
-
-        // Close the statement
-        mysqli_stmt_close($stmt);
-    } else {
-        // Error while preparing the statement
-        echo "Error: " . mysqli_error($conn);
-    }
-
-    // Close the database connection
-    mysqli_close($conn);
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -140,6 +82,10 @@ if (isset($_POST['Submit Now'])) {
             <h2 class="mb-4">Patient Registration Form</h2>
             <form id="patientForm" method="post" action="process_form.php">
                 <div class="form-group">
+                    <label for="id" class="form-label">Id</label>
+                    <input type="number" name="id" id="id" class="form-control" placeholder="id" required>
+                </div>
+                <div class="form-group">
                     <label for="name" class="form-label">Name:</label>
                     <input type="text" name="name" id="name" class="form-control" placeholder="Name" required>
                 </div>
@@ -214,7 +160,7 @@ if (isset($_POST['Submit Now'])) {
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">Submit Now</button>
+                <button type="submit" name="submit" value="submit" class="btn btn-primary w-100">Submit Now</button>
             </form>
         </div>
 
