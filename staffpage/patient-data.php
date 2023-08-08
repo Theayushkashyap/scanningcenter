@@ -164,7 +164,7 @@
                         <select name="sdescription" id="sdescription" required>
                             <option value="">Select scanning</option>
                             <option value="male">Abdominopelvic Scan</option>
-                            <option value="female">Abdominopelvic + Scrotal Scan</option>
+                            <option value="female">Abdominopelvic + Scrotal Sca</option>
                         </select>
                     </div>
                 </div>
