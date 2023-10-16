@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
         }elseif($row['user_type'] == 'staff'){
             
                 $_SESSION['user_name'] = $row['name'];
-                header('location:http://localhost:3000/hospital-website-template/staff.php');
+                header('location:http://localhost:3000/staffpage/staffpage.php');
           }
         }else{
             $error[] = 'incorrect email or password!';
