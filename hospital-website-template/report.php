@@ -121,7 +121,7 @@ if(isset($_POST['submit'])){
                         <a href="price.html" class="nav-item nav-link">Pricing</a>
                         <a href="report.php" class="nav-item nav-link active">Download Report</a>
                       
-                        <a href="http://localhost:3000/hospital-website-template/login.php" class="nav-item nav-link  ">Login</a>
+                       
                     </div>
                 </div>
             </nav>

@@ -151,7 +151,7 @@ $conn->close();
                         <a href="http://localhost:3000/hospital-website-template/report.php"
                             class="nav-item nav-link">Download Report</a>
 
-                        <a href="login.php" class="nav-item nav-link">Login</a>
+                        
                     </div>
                 </div>
             </nav>
